@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Détente & Relaxation - Le Parc des Loulous</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="../index.html" class="logo-container">
+                        <img src="../Logo (2).png" alt="Logo Le Parc des Loulous" class="logo-image">
+                        <span class="logo-text">Le Parc des Loulous</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="../index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Accueil</a>
+                        <a href="../parc.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Le Parc</a>
+                        <div class="relative group">
+                            <button class="nav-link text-gray-700 hover:text-primary px-3 py-2">Nos Services</button>
+                            <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg py-2 rounded-lg">
+                                <a href="garderie.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white">Garderie collective</a>
+                                <a href="centre-aere.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white">Centre aéré</a>
+                                <a href="ecole.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white">École du chiot & des ados</a>
+                                <a href="education.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white">Éducation & comportement</a>
+                                <a href="activites.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white">Activités mentales</a>
+                                <a href="detente.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white">Détente & relaxation</a>
+                                <a href="photo.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white">Reportages photo</a>
+                                <a href="ateliers.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white">Ateliers & événements</a>
+                            </div>
+                        </div>
+                        <a href="../galerie.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Galerie</a>
+                        <a href="../tarifs.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Tarifs</a>
+                        <a href="../contact.html" class="btn">Contact</a>
+                    </div>
+                </div>
+                <!-- Menu mobile -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md hover:bg-gray-100" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu mobile -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="../index.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Accueil</a>
+            <a href="../parc.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Le Parc</a>
+            <div class="relative">
+                <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" onclick="toggleMobileSubmenu()">
+                    Nos Services
+                    <span class="float-right">▼</span>
+                </button>
+                <div id="mobileSubmenu" class="hidden bg-gray-50">
+                    <a href="garderie.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Garderie collective</a>
+                    <a href="centre-aere.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Centre aéré</a>
+                    <a href="ecole.html" class="block px-6 py-2 text-sm hover:bg-gray-100">École du chiot</a>
+                    <a href="education.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Éducation</a>
+                    <a href="activites.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Activités mentales</a>
+                    <a href="detente.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Détente</a>
+                    <a href="photo.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Reportages photo</a>
+                    <a href="ateliers.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Ateliers</a>
+                </div>
+            </div>
+            <a href="../galerie.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galerie</a>
+            <a href="../tarifs.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tarifs</a>
+            <a href="../contact.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="bg-secondary py-12">
+            <div class="container">
+                <h1 class="text-4xl font-bold text-center mb-6">Détente & Relaxation</h1>
+                <p class="text-xl text-center mb-8">Un moment de bien-être et de sérénité pour votre compagnon</p>
+            </div>
+        </section>
+
+        <!-- Services de détente -->
+        <section class="py-12">
+            <div class="container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6">Nos Services de Détente</h2>
+                        <div class="space-y-4">
+                            <div class="card p-6">
+                                <h3 class="text-xl font-bold mb-2">Massage canin</h3>
+                                <p>Techniques douces pour soulager les tensions et favoriser la relaxation</p>
+                            </div>
+                            <div class="card p-6">
+                                <h3 class="text-xl font-bold mb-2">Aromathérapie</h3>
+                                <p>Utilisation d'huiles essentielles adaptées aux chiens pour un effet apaisant</p>
+                            </div>
+                            <div class="card p-6">
+                                <h3 class="text-xl font-bold mb-2">Exercices de respiration</h3>
+                                <p>Techniques pour aider votre chien à se détendre naturellement</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg">
+                        <img src="../assets/images/relaxation/honest-paws-8vbWQHwjP4g-unsplash.jpg" alt="Chien en séance de relaxation" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bienfaits -->
+        <section class="py-12 bg-secondary">
+            <div class="container">
+                <h2 class="text-3xl font-bold text-center mb-8">Les Bienfaits de la Relaxation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="card p-6">
+                        <div class="text-4xl mb-4">😌</div>
+                        <h3 class="text-xl font-bold mb-2">Réduction du stress</h3>
+                        <ul class="space-y-2">
+                            <li>Diminution de l'anxiété</li>
+                            <li>Meilleur sommeil</li>
+                            <li>Calme émotionnel</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <div class="text-4xl mb-4">💪</div>
+                        <h3 class="text-xl font-bold mb-2">Bien-être physique</h3>
+                        <ul class="space-y-2">
+                            <li>Soulagement musculaire</li>
+                            <li>Meilleure circulation</li>
+                            <li>Récupération physique</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <div class="text-4xl mb-4">🌟</div>
+                        <h3 class="text-xl font-bold mb-2">Équilibre mental</h3>
+                        <ul class="space-y-2">
+                            <li>Meilleure concentration</li>
+                            <li>Réduction de l'agitation</li>
+                            <li>Harmonie comportementale</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pour qui ? -->
+        <section class="py-12">
+            <div class="container">
+                <h2 class="text-3xl font-bold text-center mb-8">Pour Quels Chiens ?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-4">Idéal pour les chiens :</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">✓</span>
+                                <span>Stressés ou anxieux</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">✓</span>
+                                <span>Sportifs en récupération</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">✓</span>
+                                <span>Seniors avec des tensions musculaires</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">✓</span>
+                                <span>En convalescence</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-4">Bénéfices spécifiques :</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">✓</span>
+                                <span>Amélioration du bien-être général</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">✓</span>
+                                <span>Renforcement du lien maître-chien</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">✓</span>
+                                <span>Prévention des problèmes de santé</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">✓</span>
+                                <span>Meilleure qualité de vie</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-12 bg-primary text-white">
+            <div class="container text-center">
+                <h2 class="text-3xl font-bold mb-4">Offrez un moment de détente à votre chien</h2>
+                <p class="text-xl mb-8">Réservez une séance de relaxation personnalisée</p>
+                <a href="../contact.html" class="btn bg-white text-primary hover:bg-gray-100">
+                    Réserver une séance
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-accent text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- À propos -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="../Logo (2).png" alt="Logo Le Parc des Loulous" class="h-12 w-auto">
+                        <span class="text-xl font-bold">Le Parc des Loulous</span>
+                    </div>
+                    <p class="text-gray-300">Un lieu unique dédié au bien-être et à l'épanouissement de votre chien, où passion et professionnalisme se rencontrent.</p>
+                </div>
+
+                <!-- Liens rapides -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Liens Rapides</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-primary transition-colors duration-300">Accueil</a></li>
+                        <li><a href="../parc.html" class="text-gray-300 hover:text-primary transition-colors duration-300">Le Parc</a></li>
+                        <li><a href="garderie.html" class="text-gray-300 hover:text-primary transition-colors duration-300">Garderie</a></li>
+                        <li><a href="education.html" class="text-gray-300 hover:text-primary transition-colors duration-300">Éducation</a></li>
+                        <li><a href="../galerie.html" class="text-gray-300 hover:text-primary transition-colors duration-300">Galerie</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span class="text-gray-300">123 Avenue des Chiens<br>63000 Clermont-Ferrand</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span class="text-gray-300">04 73 12 34 56</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span class="text-gray-300">contact@parcdesloulous.fr</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Horaires et réseaux sociaux -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Horaires</h3>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex justify-between text-gray-300">
+                            <span>Lundi - Vendredi</span>
+                            <span>8h - 19h</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Samedi</span>
+                            <span>9h - 17h</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Dimanche</span>
+                            <span>Fermé</span>
+                        </li>
+                    </ul>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-white">Suivez-nous</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-2xl text-gray-300 hover:text-primary transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-2xl text-gray-300 hover:text-primary transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+            <div class="mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-300">&copy; 2024 Le Parc des Loulous. Tous droits réservés.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300">Mentions légales</a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300">Politique de confidentialité</a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300">CGV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" class="btn fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Menu mobile
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Bouton retour en haut
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.classList.remove('opacity-0', 'invisible');
+                scrollToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopButton.classList.add('opacity-0', 'invisible');
+                scrollToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 
