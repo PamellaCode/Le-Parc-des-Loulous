@@ -19,4 +19,44 @@ build/
 
 # Fichiers de cache
 .cache/
-.temp/ 
+.temp/
+
+# Fichiers d'images et médias
+*.psd
+*.ai
+*.indd
+*.raw
+*.cr2
+*.nef
+*.tiff
+*.bmp
+*.gif
+*.mp4
+*.mov
+*.avi
+*.wmv
+
+# Fichiers de backup
+*.bak
+*~
+*.swp
+
+# Fichiers de développement
+.idea/
+.vscode/
+*.sublime-*
+*.code-workspace
+
+# Fichiers de dépendances
+package-lock.json
+yarn.lock
+
+# Fichiers de logs et bases de données
+*.sqlite
+*.db
+logs/
+*.log.*
+
+# Fichiers de configuration locaux
+config.local.js
+settings.local.json 
