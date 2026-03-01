@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Le Parc des Loulous - Accueil | Garderie, éducation & activités pour chiens</title>
+    <meta name="description" content="Le Parc des Loulous : garderie collective, éducation canine, activités et détente pour votre chien à Clermont-Ferrand. Un lieu unique dédié à son épanouissement.">
+    <meta name="theme-color" content="#b74f11">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="preload" as="image" href="images/Bannières/Groupe_de_chiens_heureux.webp">
+    <link rel="preload" href="Police/Chewy/Chewy-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="Police/Andika/Andika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="Police/Paprika/Paprika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+</head>
+<body class="body-bg">
+    <!-- Lien d'évitement -->
+    <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+    <!-- En-tête avec navigation -->
+    <header class="header-nav">
+        <nav class="bg-white shadow-lg fixed w-full z-50">
+            <div class="header-nav-inner w-full px-3">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="logo-container">
+                            <img src="./Logo Submarck.png" alt="Logo Le Parc des Loulous" class="logo-image" width="75" height="75" decoding="async">
+                        <span class="logo-text">Le Parc des Loulous</span>
+                    </a>
+                </div>
+                <div class="header-nav-menu hidden md:block">
+                    <div class="flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link active text-gray-700 hover:text-primary px-3 py-2" aria-current="page">Accueil</a>
+                        <a href="parc.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Le Parc</a>
+                        <div class="relative group">
+                            <button class="nav-link text-gray-700 hover:text-primary px-3 py-2">Nos Services</button>
+                            <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg py-2 rounded-lg nav-dropdown">
+                                <a href="services/garderie.html" class="nav-dropdown-link">Garderie collective</a>
+                                <a href="services/centre-aere.html" class="nav-dropdown-link">Centre aéré</a>
+                                <a href="services/ecole.html" class="nav-dropdown-link">École du chiot & des ados</a>
+                                <a href="services/education.html" class="nav-dropdown-link">Éducation & comportement</a>
+                                <a href="services/activites.html" class="nav-dropdown-link">Activités mentales</a>
+                                <a href="services/detente.html" class="nav-dropdown-link">Détente & relaxation</a>
+                                <a href="services/photo.html" class="nav-dropdown-link">Photographie</a>
+                                <a href="services/ateliers.html" class="nav-dropdown-link">Ateliers & événements</a>
+                            </div>
+                        </div>
+                        <a href="galerie.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Galerie</a>
+                        <a href="tarifs.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Tarifs</a>
+                        <a href="contact.html" class="btn">Contact</a>
+                    </div>
+                </div>
+                <!-- Menu mobile -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button p-2 rounded-md hover:bg-gray-100" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu de navigation" aria-expanded="false" id="menuToggle">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu mobile -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-100 active" aria-current="page">Accueil</a>
+            <a href="parc.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Le Parc</a>
+            <div class="relative">
+                <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" onclick="toggleMobileSubmenu()">
+                    Nos Services
+                    <span class="float-right">▼</span>
+                </button>
+                <div id="mobileSubmenu" class="hidden bg-gray-50">
+                    <a href="services/garderie.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Garderie collective</a>
+                    <a href="services/centre-aere.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Centre aéré</a>
+                    <a href="services/ecole.html" class="block px-6 py-2 text-sm hover:bg-gray-100">École du chiot & des ados</a>
+                    <a href="services/education.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Éducation & comportement</a>
+                    <a href="services/activites.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Activités mentales</a>
+                    <a href="services/detente.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Détente & relaxation</a>
+                    <a href="services/photo.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Photographie</a>
+                    <a href="services/ateliers.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Ateliers & événements</a>
+                </div>
+            </div>
+            <a href="galerie.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galerie</a>
+            <a href="tarifs.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tarifs</a>
+            <a href="contact.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen paw-pattern min-h-[60vh] sm:min-h-[70vh] flex flex-col" aria-label="Bienvenue">
+        <div class="absolute inset-0">
+            <img src="images/Bannières/Groupe_de_chiens_heureux.webp" alt="Chiens au parc : bienvenue au Parc des Loulous, garderie et activités à Clermont-Ferrand" class="w-full h-full object-cover object-center" fetchpriority="high" decoding="async" width="1920" height="1080">
+        </div>
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+            <div class="max-w-3xl w-full">
+                <h1 class="font-chewy text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 animate-fade-in drop-shadow-2xl leading-tight">
+                    Bienvenue au Parc des Loulous
+                </h1>
+                <p class="font-paprika text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 animate-fade-in-delay hero-text-shadow px-1">
+                    Un lieu unique dédié à l'épanouissement et à la sociabilisation de votre chien.
+                </p>
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4 animate-fade-in-delay-2">
+                    <a href="contact.html" class="hero-cta font-paprika inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 min-h-[48px] shadow-lg hover:opacity-90">
+                        Nous contacter <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                    </a>
+                    <a href="parc.html" class="btn-outline-hero font-paprika inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 min-h-[48px] rounded-full border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300 shadow-lg">
+                        Découvrir le parc <i class="fas fa-paw text-sm" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#services" class="hero-scroll-link font-paprika absolute bottom-6 left-0 right-0 z-20 flex flex-col items-center justify-center text-center transition-colors" aria-label="Descendre vers nos services">
+            <span class="text-base font-medium uppercase tracking-widest mb-2 drop-shadow-md">Découvrir</span>
+            <i class="fas fa-chevron-down animate-bounce-slow text-white" aria-hidden="true"></i>
+        </a>
+    </section>
+
+    <main id="contenu-principal">
+    <!--
+      Typographie page d'accueil (tailles des polices) :
+      - H1 hero : 36px mobile / 60px desktop (text-4xl md:text-6xl)
+      - H2 sections : 30px mobile / 36px desktop (text-3xl md:text-4xl)
+      - H2 bandeau : 24px mobile / 30px desktop (text-2xl md:text-3xl)
+      - H3 (cartes, sous-titres) : 20px (text-xl)
+      - Intro sous H2 : 18px (text-lg)
+      - Corps de texte / paragraphes : 18px (text-lg)
+      - Cartes « Pourquoi » : 16px mobile / 18px desktop (text-base md:text-lg)
+      - Témoignages citation : 18px (text-lg) | auteur : 18px (CSS)
+      - CTA sous-titre : 20px / 24px (text-xl md:text-2xl)
+      Polices : Chewy (titre hero + logo), Andika (texte), Paprika (nav, boutons)
+    -->
+
+    <!-- Section Services -->
+    <section id="services" class="pt-10 md:pt-14 pb-12 md:pb-16 bg-cream scroll-mt-20">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Nos Services</h2>
+            <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Garderie, éducation et activités pour le bonheur de votre compagnon.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+                <a href="services/garderie.html" class="card overflow-hidden p-0 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] group block">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="images/Accueil/Pattes_de_chien_dans_mains_humaines.webp" alt="Garderie collective : chiens en groupe encadrés au Parc des Loulous" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-3xl text-primary mb-3"><i class="fas fa-dog"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Garderie</h3>
+                        <p class="text-gray-600 text-lg mb-4">Un espace sécurisé pour que votre chien s'amuse et se sociabilise en votre absence.</p>
+                        <span class="text-primary font-medium card-link-green group-hover:underline">En savoir plus →</span>
+                    </div>
+                </a>
+                <a href="services/education.html" class="card overflow-hidden p-0 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] group block">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="images/Accueil/Chien_complice_avec_sa_proprietaire.webp" alt="Éducation canine positive : séance avec un chien et son éducateur" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-3xl text-primary mb-3"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Éducation</h3>
+                        <p class="text-gray-600 text-lg mb-4">Des cours d'éducation canine adaptés à tous les âges et tous les niveaux.</p>
+                        <span class="text-primary font-medium card-link-green group-hover:underline">En savoir plus →</span>
+                    </div>
+                </a>
+                <a href="services/activites.html" class="card overflow-hidden p-0 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] group block">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="images/Accueil/Chien_en_plein_air_dans_le parc_immense.webp" alt="Activités et jeux pour chiens : stimulation et complicité au parc" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-3xl text-primary mb-3"><i class="fas fa-brain"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Activités</h3>
+                        <p class="text-gray-600 text-lg mb-4">Des activités stimulantes pour développer l'intelligence et le bien-être de votre chien.</p>
+                        <span class="text-primary font-medium card-link-green group-hover:underline">En savoir plus →</span>
+                    </div>
+                </a>
+            </div>
+            <p class="text-center mt-14 md:mt-16">
+                <a href="galerie.html" class="btn btn-green inline-flex items-center gap-2">
+                    Voir toute notre galerie <i class="fas fa-images" aria-hidden="true"></i>
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Jeux & nature - photo chien bondissant -->
+    <section id="jeux-nature" class="pt-6 md:pt-8 pb-16 md:pb-20 bg-section-gradient scroll-mt-20">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Jeux & nature au parc</h2>
+            <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Un espace vert où votre chien peut courir, sauter et s'amuser en toute liberté.</p>
+            <div class="flex flex-col lg:flex-row flex-wrap items-center gap-8 sm:gap-10 lg:gap-16">
+                <div class="w-full lg:w-5/12 order-2 lg:order-1">
+                    <div class="prose prose-lg max-w-none">
+                        <h3 class="text-xl text-accent-color mb-4">Des moments de complicité</h3>
+                        <p class="text-gray-600 text-lg mb-4 text-justify">Au Parc des Loulous, nous privilégions les sorties en extérieur et les activités qui stimulent à la fois le corps et la tête de votre compagnon. Jeux de balle, parcours, rencontres avec d'autres chiens… chaque visite est une aventure.</p>
+                        <p class="text-gray-600 text-lg mb-6 text-justify">Notre cadre boisé et nos espaces engazonnés offrent un environnement idéal pour que votre loulou se dépense en toute sécurité, sous surveillance bienveillante.</p>
+                        <ul class="list-none space-y-2 text-gray-600 text-lg">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green" aria-hidden="true"></i> Espaces verts dédiés</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green" aria-hidden="true"></i> Jeux et agrès adaptés</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green" aria-hidden="true"></i> Socialisation encadrée</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 order-1 lg:order-2">
+                    <div class="rounded-2xl overflow-hidden shadow-xl img-frame-green">
+                        <img src="images/Accueil/Chien_qui_saute_avec_un_baton.webp" alt="Chien bondissant avec un bâton dans l’espace nature du Parc des Loulous" loading="lazy" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bandeau visuel -->
+    <section class="relative py-0 overflow-hidden" aria-labelledby="titre-lieu">
+        <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 lg:w-2/5 aspect-[4/3] md:aspect-auto md:min-h-[320px]">
+                <img src="images/Accueil/Chien_heureux_sur_le_dos_dans_l_herbe.webp" alt="Groupe de chiens joyeux qui jouent ensemble dans le parc" loading="lazy" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 lg:w-3/5 flex items-center bg-cream px-6 py-12 md:py-16 lg:pl-12">
+                <div class="max-w-xl mx-auto md:mx-0">
+                    <h2 id="titre-lieu" class="text-2xl md:text-3xl font-bold mb-4">Un lieu pensé pour eux… et pour vous</h2>
+                    <p class="text-gray-600 text-lg mb-6 text-justify">Au Parc des Loulous, chaque jour est l'occasion de jeux, de rencontres et de progrès. Nous accueillons votre chien dans un cadre sécurisé et bienveillant.</p>
+                    <a href="parc.html" class="btn inline-flex items-center gap-2">
+                        Découvrir le parc <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pourquoi Nous -->
+    <section id="pourquoi" class="pt-16 md:pt-20 pb-12 md:pb-16 bg-section-gradient scroll-mt-20">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-12">Pourquoi Nous Choisir ?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="card card-compact p-6 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-3xl text-primary" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Sécurité</h3>
+                    <p class="text-gray-600 text-base md:text-lg">Un environnement sécurisé et surveillé pour la tranquillité de tous.</p>
+                </div>
+                <div class="card card-compact p-6 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-3xl text-primary" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Expertise</h3>
+                    <p class="text-gray-600 text-base md:text-lg">Une équipe de professionnels qualifiés et à l'écoute.</p>
+                </div>
+                <div class="card card-compact p-6 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-3xl text-primary" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Passion</h3>
+                    <p class="text-gray-600 text-base md:text-lg">Un amour inconditionnel pour les chiens au quotidien.</p>
+                </div>
+                <div class="card card-compact p-6 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-3xl icon-qualite" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Qualité</h3>
+                    <p class="text-gray-600 text-base md:text-lg">Des services de haute qualité pour le bien-être de votre compagnon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section id="temoignages" class="pt-12 md:pt-16 pb-16 md:pb-20 bg-cream scroll-mt-20">
+        <div class="container">
+            <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Ce que disent nos clients</h2>
+            <p class="text-center text-gray-600 text-lg mb-12 max-w-xl mx-auto">Ils nous font confiance pour le bonheur de leur compagnon.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <blockquote class="card card-testimonial p-6 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4" aria-hidden="true">
+                        <span class="text-amber-400 text-lg">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 text-lg mb-4 italic">"Un endroit merveilleux pour mon chien. Il est toujours ravi d'y aller et revient épuisé et heureux !"</p>
+                    <footer class="testimonial-author">— Marie Dupont</footer>
+                </blockquote>
+                <blockquote class="card card-testimonial p-6 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4" aria-hidden="true">
+                        <span class="text-amber-400 text-lg">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 text-lg mb-4 italic">"L'équipe est professionnelle et attentionnée. Mon chien a fait des progrès incroyables en éducation."</p>
+                    <footer class="testimonial-author">— Thomas Leroy</footer>
+                </blockquote>
+                <blockquote class="card card-testimonial p-6 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4" aria-hidden="true">
+                        <span class="text-amber-400 text-lg">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 text-lg mb-4 italic">"Un service de garderie impeccable. Je peux partir au travail l'esprit tranquille."</p>
+                    <footer class="testimonial-author">— Sophie Martin</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA -->
+    <section class="py-16 md:py-20 cta-section">
+        <div class="container text-center relative z-10">
+            <h2 class="section-title-home text-3xl md:text-4xl font-bold mb-4">Prêt à rejoindre l'aventure ?</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-95 max-w-xl mx-auto">Réservez une visite ou un service, nous serons ravis de vous accueillir.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="contact.html" class="btn btn-cta transform hover:scale-105 transition-all duration-300 px-8 py-3 rounded-full font-bold inline-flex items-center gap-2">
+                    Nous contacter <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a href="tarifs.html" class="btn-cta-outline inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium border-2 transition-all duration-300">
+                    Voir les tarifs
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" class="btn fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer-cream">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- Identité et adresse -->
+                <div class="footer-brand text-center">
+                    <div class="flex flex-col items-center">
+                        <a href="index.html" aria-label="Retour à l'accueil">
+                            <img src="./Logo principal.png" alt="Logo Le Parc des Loulous" class="footer-logo w-48 max-w-full h-auto mb-3" loading="lazy" decoding="async">
+                        </a>
+                        <address class="footer-address not-italic mt-2">
+                            123 Avenue des Chiens<br>
+                            63000 Clermont-Ferrand
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact text-center">
+                    <p class="footer-label">Téléphone :</p>
+                    <p class="footer-value">04 73 12 34 56</p>
+                    <p class="footer-label mt-4">Mail :</p>
+                    <p class="footer-value">contact@parcdesloulous.fr</p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-nav text-center">
+                    <ul class="footer-nav-list space-y-2 text-base">
+                        <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
+                        <li><a href="parc.html">Le Parc</a></li>
+                        <li><a href="services/garderie.html">Nos Services</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="footer-social">
+                    <p class="footer-social-title text-center">Suivez-nous sur <br> les réseaux sociaux</p>
+                    <div class="footer-social-icons flex items-center justify-center gap-3 mt-4">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-x" aria-label="X (anciennement Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+        </div>
+    </footer>
+
+    <script>
+        // Toggle menu mobile
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        }
+
+        // Toggle sous-menu mobile
+        function toggleMobileSubmenu() {
+            document.getElementById('mobileSubmenu').classList.toggle('hidden');
+        }
+
+        // Bouton retour en haut
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        
+        function updateScrollButtonVisibility() {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.classList.remove('opacity-0', 'invisible');
+                scrollToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopButton.classList.add('opacity-0', 'invisible');
+                scrollToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        }
+        window.addEventListener('scroll', updateScrollButtonVisibility, { passive: true });
+        updateScrollButtonVisibility(); // état initial (page déjà scrollée ou rechargée)
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Menu mobile : mettre à jour aria-expanded
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+            });
+        }
+
+        // Animation au scroll : sur mobile, différer pour ne pas bloquer le premier rendu
+        const cards = document.querySelectorAll('.card');
+        const runObserver = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: window.matchMedia('(max-width: 767px)').matches ? '0px 0px 80px 0px' : '0px 0px -40px 0px' });
+            cards.forEach((el) => observer.observe(el));
+        };
+        if (window.matchMedia('(max-width: 767px)').matches) {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(runObserver, { timeout: 1500 });
+            } else {
+                setTimeout(runObserver, 300);
+            }
+        } else {
+            runObserver();
+        }
+    </script>
+</body>
+</html> 

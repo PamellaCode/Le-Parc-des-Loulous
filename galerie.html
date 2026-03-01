@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Galerie - Le Parc des Loulous</title>
+    <meta name="description" content="Galerie photo du Parc des Loulous : parc, garderie, éducation, activités, détente et photographie. Découvrez nos moments en images.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="preload" as="image" href="images/Bannières/Chiens_heureux_dans_le_parc.webp">
+    <link rel="preload" href="Police/Chewy/Chewy-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="Police/Andika/Andika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="Police/Paprika/Paprika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+</head>
+<body class="body-bg">
+    <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+    <header class="header-nav">
+        <nav class="bg-white shadow-lg fixed w-full z-50">
+            <div class="header-nav-inner w-full px-3">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="logo-container">
+                            <img src="./Logo Submarck.png" alt="Logo Le Parc des Loulous" class="logo-image" width="75" height="75" decoding="async">
+                            <span class="logo-text">Le Parc des Loulous</span>
+                        </a>
+                    </div>
+                    <div class="header-nav-menu hidden md:block">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Accueil</a>
+                            <a href="parc.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Le Parc</a>
+                            <div class="relative group">
+                                <button class="nav-link text-gray-700 hover:text-primary px-3 py-2">Nos Services</button>
+                                <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg py-2 rounded-lg nav-dropdown">
+                                    <a href="services/garderie.html" class="nav-dropdown-link">Garderie collective</a>
+                                    <a href="services/centre-aere.html" class="nav-dropdown-link">Centre aéré</a>
+                                    <a href="services/ecole.html" class="nav-dropdown-link">École du chiot & des ados</a>
+                                    <a href="services/education.html" class="nav-dropdown-link">Éducation & comportement</a>
+                                    <a href="services/activites.html" class="nav-dropdown-link">Activités mentales</a>
+                                    <a href="services/detente.html" class="nav-dropdown-link">Détente & relaxation</a>
+                                    <a href="services/photo.html" class="nav-dropdown-link">Photographie</a>
+                                    <a href="services/ateliers.html" class="nav-dropdown-link">Ateliers & événements</a>
+                                </div>
+                            </div>
+                            <a href="galerie.html" class="nav-link active text-gray-700 hover:text-primary px-3 py-2" aria-current="page">Galerie</a>
+                            <a href="tarifs.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Tarifs</a>
+                            <a href="contact.html" class="btn">Contact</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button" class="mobile-menu-button p-2 rounded-md hover:bg-gray-100" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu de navigation" aria-expanded="false" id="menuToggle">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu hidden md:hidden">
+                <a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Accueil</a>
+                <a href="parc.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Le Parc</a>
+                <div class="relative">
+                    <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" onclick="toggleMobileSubmenu()">Nos Services <span class="float-right">▼</span></button>
+                    <div id="mobileSubmenu" class="hidden bg-gray-50">
+                        <a href="services/garderie.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Garderie collective</a>
+                        <a href="services/centre-aere.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Centre aéré</a>
+                        <a href="services/ecole.html" class="block px-6 py-2 text-sm hover:bg-gray-100">École du chiot & des ados</a>
+                        <a href="services/education.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Éducation & comportement</a>
+                        <a href="services/activites.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Activités mentales</a>
+                        <a href="services/detente.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Détente & relaxation</a>
+                        <a href="services/photo.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Photographie</a>
+                        <a href="services/ateliers.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Ateliers & événements</a>
+                    </div>
+                </div>
+                <a href="galerie.html" class="block px-4 py-2 text-sm hover:bg-gray-100 active" aria-current="page">Galerie</a>
+                <a href="tarifs.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tarifs</a>
+                <a href="contact.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bannière Hero -->
+    <section class="relative min-h-[60vh] sm:min-h-[70vh] h-screen flex flex-col overflow-hidden pt-20" aria-label="Galerie">
+        <div class="absolute inset-0">
+            <img src="images/Bannières/Chiens_heureux_dans_le_parc.webp" alt="Galerie photo du Parc des Loulous : moments de vie, garderie, parc et activités" class="w-full h-full object-cover object-center" fetchpriority="high" decoding="async" width="1920" height="1080">
+        </div>
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+            <h1 class="font-chewy text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-5 drop-shadow-2xl leading-tight">Notre Galerie</h1>
+            <p class="font-paprika text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto mb-8 sm:mb-10 hero-text-shadow px-1">
+                Découvrez les plus beaux moments de nos pensionnaires et de nos activités.
+            </p>
+            <a href="#contenu-principal" class="hero-cta font-paprika inline-flex items-center gap-2 px-8 py-3 shadow-lg hover:opacity-90 mb-8" aria-label="Descendre au contenu">Découvrir</a>
+            <a href="#contenu-principal" class="hero-scroll-link font-paprika inline-flex flex-col items-center text-white transition-colors" aria-label="Descendre au contenu">
+                <i class="fas fa-chevron-down animate-bounce-slow text-white drop-shadow-md" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+    <main id="contenu-principal" class="pt-4 scroll-mt-20">
+        <!-- Filtres -->
+        <section class="pt-10 md:pt-14 pb-8 md:pb-10 bg-cream scroll-mt-20" aria-label="Filtres de la galerie">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="gallery-filters-card rounded-2xl bg-white/80 shadow-md border border-gray-100 px-4 sm:px-6 py-5 sm:py-6 md:px-8 md:py-7">
+                    <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center text-accent mb-2">Filtrer par thématique</h2>
+                    <p class="text-center text-gray-600 text-sm md:text-base mb-4 sm:mb-6 max-w-lg mx-auto">Choisissez une catégorie pour afficher les photos correspondantes.</p>
+                    <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
+                        <button type="button" class="filter-btn active" data-filter="all">Tous</button>
+                        <button type="button" class="filter-btn" data-filter="parc">Le Parc</button>
+                        <button type="button" class="filter-btn" data-filter="garderie">Garderie</button>
+                        <button type="button" class="filter-btn" data-filter="centre-aere">Centre aéré</button>
+                        <button type="button" class="filter-btn" data-filter="ecole">École du chiot</button>
+                        <button type="button" class="filter-btn" data-filter="education">Éducation</button>
+                        <button type="button" class="filter-btn" data-filter="activites">Activités</button>
+                        <button type="button" class="filter-btn" data-filter="detente">Détente</button>
+                        <button type="button" class="filter-btn" data-filter="photo">Photo</button>
+                        <button type="button" class="filter-btn" data-filter="ateliers">Ateliers</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie -->
+        <section class="pt-8 md:pt-10 pb-12 md:pb-16 bg-section-gradient" aria-label="Photos de la galerie">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="gallery-grid js-gallery">
+                    <!-- Parc -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="parc">
+                        <img src="images/Parc/Berger_australien_parcours_agility.webp" alt="Chiens qui jouent ensemble dans l’espace du parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="parc">
+                        <img src="images/Parc/Chien_heureux_qui_arrive_de_face.webp" alt="Chien en liberté dans la nature du parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="parc">
+                        <img src="images/Parc/Chien_qui_vient_en_courant.webp" alt="Chiens en balade et jeux au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="parc">
+                        <img src="images/Parc/Environnement_du_parc.webp" alt="Vue de l’espace vert du parc pour chiens" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="parc">
+                        <img src="images/Parc/Labrador_qui_court_en_plein_air.webp" alt="Chiens en activité encadrée au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="parc">
+                        <img src="images/Parc/samoyedes_heureux_au_parc.webp" alt="Parcours et jeux d’agility au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+
+                    <!-- Garderie -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Groupe_de_chiens_qui_jouent.webp" alt="Chiens en groupe à la garderie collective du Parc des Loulous" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Chiot_berger_blanc_suisse.webp" alt="Chiens en liberté dans l’espace sécurisé du parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Chien_qui_se_roule_par_terre.webp" alt="Chien heureux en pleine nature à la garderie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Chiens_heureux_sur_le_dos.webp" alt="Jeux en groupe à la garderie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Shiba_qui_court.webp" alt="Chiens en groupe à la garderie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Chiens_qui_se_disent_bonjour.webp" alt="Moment de jeu en garderie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Petits_chiens_qui_jouent_a_la_balle.webp" alt="Chiens en détente après les activités de garderie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Chiens_qui_jouent.webp" alt="Activités encadrées par l’équipe du parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Petits_chiens_happy.webp" alt="Moment de complicité entre chien et humain à la garderie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="garderie">
+                        <img src="images/Nos_services/Garderie_collective/Chiens_de_differentes_tailles_qui_jouent.webp" alt="Ambiance conviviale de la garderie collective" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+
+                    <!-- Centre aéré -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/Chiens_qui_joue_avec_le_meme_baton.webp" alt="Chiens en activité au centre aéré du Parc des Loulous" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/Chiens_qui_jouent_a_la_balle.webp" alt="Activités ludiques au centre aéré" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/Chiot_tunnel_agility.webp" alt="Moment de jeu au centre aéré" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/chiens_sur_parcours_agility.webp" alt="Jeux en groupe au centre aéré" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/Apprenissage_chien_slalom.webp" alt="Chiens en action lors des activités du centre aéré" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/Chiens_dans_l_herbe.webp" alt="Moment de complicité au centre aéré" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/Chien_slalom_agility.webp" alt="Activités encadrées au centre aéré" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/Chiens_qui_jouent_ensemble.webp" alt="Ambiance conviviale du centre aéré" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="centre-aere">
+                        <img src="images/Nos_services/Centre_aere/Different_chiens_qui_joue_a_la_balle.webp" alt="Jeux en groupe au centre aéré" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+
+                    <!-- École du chiot -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot.webp" alt="Chiot en apprentissage à l’école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_beagle.webp" alt="Séance collective à l’école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_berger_allemand.webp" alt="Chiot en séance d’éducation à l’école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_berger_blanc_suisse.webp" alt="Chiot en cours avec son maître" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_happy.webp" alt="Groupe de chiots en séance à l’école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_labrador.webp" alt="Apprentissage des bases à l’école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_obstacle_agility.webp" alt="Chiot et maître en moment de complicité à l’école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_rottweiler.webp" alt="Séance d’éducation à l’école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Shiba_inu.webp" alt="Shiba inu à l'école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_shiba.webp" alt="Chiot en apprentissage à l'école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Groupe_de_chiot_berger_allemand.webp" alt="Séance collective à l'école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_shiba_inu.webp" alt="Chiot en séance d'éducation à l'école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_bisous.webp" alt="Chiot en cours avec son maître" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_border_collie.webp" alt="Groupe de chiots en séance à l'école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_berger_australien.webp" alt="Apprentissage des bases à l'école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_tunnel_agility.webp" alt="Chiot et maître en moment de complicité" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ecole">
+                        <img src="images/Nos_services/Ecole_du_chiot/Chiot_qui_jouent_ensemble.webp" alt="Séance d'éducation à l'école du chiot" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+
+                    <!-- Éducation -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/Shiba_en_seance_education.webp" alt="Accompagnement et éducation positive" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/Chien_qui_tape_dans_la_main.webp" alt="Séance d'éducation en extérieur" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/Chien_agility_tunnel.webp" alt="Séance d'éducation canine" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/education_chiot_husky.webp" alt="Travail d’éducation en extérieur au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/Chien_education_avec_enfant.webp" alt="Séance d’éducation canine individuelle" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/Chien_saute_obstacle_agility.webp" alt="Travail avec le chien en séance d’éducation" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/chien_parcours_agility.webp" alt="Exercice d'éducation canine" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/Chien_exercice_proprioception.webp" alt="Exercice d’éducation en extérieur" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/Husky_seance_education.webp" alt="Complicité chien-éducateur" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="education">
+                        <img src="images/Nos_services/Education/Chien_seance_education.webp" alt="Moment d'apprentissage" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+
+                    <!-- Activités mentales -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Chien_avec_sa_balle.webp" alt="Chien en activité mentale et jeu de réflexion" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Chien_qui_court_avec_sa_balle.webp" alt="Atelier d’activités mentales avec le chien" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Chien_qui_fais_un_puzzle.webp" alt="Chien et maître en activité" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Chien_qui_machouille_sa_balle.webp" alt="Stimulation cognitive du chien en atelier" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Parcours_olfactif.webp" alt="Jeu de réflexion et stimulation cognitive pour chien" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Tapis_de_fouille.webp" alt="Stimulation et complicité" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Tapis_de_fouille_2.webp" alt="Atelier olfactif et jeux de pistes" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Tapis_de_lechage.webp" alt="Séance d'activités mentales" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="activites">
+                        <img src="images/Nos_services/Activites_mentales/Tapis_enrichisement.webp" alt="Chien en concentration" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+
+                    <!-- Détente -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="detente">
+                        <img src="images/Nos_services/Detente_et_relaxation/Aromatherapie.webp" alt="Chien détendu en séance de relaxation" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="detente">
+                        <img src="images/Nos_services/Detente_et_relaxation/Balneotherapie_canine.webp" alt="Chien apaisé après une séance de détente" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="detente">
+                        <img src="images/Nos_services/Detente_et_relaxation/Chien_apaise.webp" alt="Séance de relaxation canine au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="detente">
+                        <img src="images/Nos_services/Detente_et_relaxation/Chien_detendu.webp" alt="Moment de bien-être" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="detente">
+                        <img src="images/Nos_services/Detente_et_relaxation/Chien_relaxe.webp" alt="Bien-être du chien" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="detente">
+                        <img src="images/Nos_services/Detente_et_relaxation/Huiles_essentielles.webp" alt="Moment de relaxation et bien-être du chien" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="detente">
+                        <img src="images/Nos_services/Detente_et_relaxation/Lavande_et_marguerite.webp" alt="Séance de détente" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="detente">
+                        <img src="images/Nos_services/Detente_et_relaxation/Massage_canin.webp" alt="Détente au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+
+                    <!-- Photographie -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Akita_dans_la_neige.webp" alt="Chien en séance photographie dans un cadre naturel" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Chien_champs.webp" alt="Séance photo au parc : souvenir de votre chien" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Chien_champ_de_fleur.webp" alt="Chien en pose naturelle lors d’un photographie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Chien_dans_lavande.webp" alt="Reportage photo d’un chien en extérieur" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Chien_dans_piscine.webp" alt="Séance photo professionnelle au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Chien_soleil.webp" alt="Moment de complicité capté en photographie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Chiot_dans_cagette.webp" alt="Chien en extérieur lors d’un photographie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Chiot_sous_couverture.webp" alt="Portrait de chien en séance photo" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Complicite_homme_chien.webp" alt="Moment de complicité en séance photographie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Shiba_bandana.webp" alt="Photographie au parc des Loulous" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Shiba_feuille_automne.webp" alt="Chien en séance de photographie" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="photo">
+                        <img src="images/Nos_services/Photographie/Visage_deux_chiens.webp" alt="Souvenirs photo de votre chien au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+
+                    <!-- Ateliers -->
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ateliers">
+                        <img src="images/Nos_services/Ateliers_et_evenements/Cani_cross.webp" alt="Événement et atelier au Parc des Loulous" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ateliers">
+                        <img src="images/Nos_services/Ateliers_et_evenements/Cani_rando.webp" alt="Moment d’atelier avec les chiens au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ateliers">
+                        <img src="images/Nos_services/Ateliers_et_evenements/Chiens_deguise_halloween.webp" alt="Événement spécial organisé au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ateliers">
+                        <img src="images/Nos_services/Ateliers_et_evenements/Chien_avec_bonnet_de_noel.webp" alt="Atelier festif avec des chiens" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ateliers">
+                        <img src="images/Nos_services/Ateliers_et_evenements/Chien_deguise_en_champignon.webp" alt="Atelier thématique avec les chiens au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ateliers">
+                        <img src="images/Nos_services/Ateliers_et_evenements/Chien_deguise_halloween.webp" alt="Événement des Loulous : animation et ateliers au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100" data-category="ateliers">
+                        <img src="images/Nos_services/Ateliers_et_evenements/Shiba_avec_traineau_de_cadeau.webp" alt="Moment de partage lors d’un atelier au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partagez vos photos -->
+        <section class="pt-12 md:pt-16 pb-16 md:pb-20 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-accent mb-4">Partagez vos photos</h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Vous avez une photo prise au complexe ? Envoyez-la-nous pour qu'elle apparaisse dans notre galerie !
+                </p>
+                <a href="contact.html" class="btn btn-green inline-flex items-center gap-2">
+                    Envoyer une photo <i class="fas fa-images" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-block bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <div class="cta-inner">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Une question ou envie de nous rendre visite ?</h2>
+                    <p class="text-xl mb-8">Contactez-nous pour en savoir plus sur nos services et réserver.</p>
+                    <a href="contact.html" class="btn bg-white text-primary hover:bg-gray-100 inline-flex items-center gap-2">
+                        Nous contacter <i class="fas fa-envelope text-primary text-sm" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-cream">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand text-center">
+                    <div class="flex flex-col items-center">
+                        <a href="index.html" aria-label="Retour à l'accueil">
+                            <img src="./Logo principal.png" alt="Logo Le Parc des Loulous" class="footer-logo w-48 max-w-full h-auto mb-3" loading="lazy" decoding="async">
+                        </a>
+                        <address class="footer-address not-italic mt-2">
+                            123 Avenue des Chiens<br>
+                            63000 Clermont-Ferrand
+                        </address>
+                    </div>
+                </div>
+                <div class="footer-contact text-center">
+                    <p class="footer-label">Téléphone :</p>
+                    <p class="footer-value">04 73 12 34 56</p>
+                    <p class="footer-label mt-4">Mail :</p>
+                    <p class="footer-value">contact@parcdesloulous.fr</p>
+                </div>
+                <div class="footer-nav text-center">
+                    <ul class="footer-nav-list space-y-2 text-base">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="parc.html">Le Parc</a></li>
+                        <li><a href="services/garderie.html">Nos Services</a></li>
+                        <li><a href="galerie.html" class="active" aria-current="page">Galerie</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <p class="footer-social-title text-center">Suivez-nous sur <br> les réseaux sociaux</p>
+                    <div class="footer-social-icons flex items-center justify-center gap-3 mt-4">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-x" aria-label="X (anciennement Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox plein écran -->
+    <div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Photo en grand" tabindex="-1">
+        <button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Photo précédente"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <div class="lightbox-inner">
+            <img src="" alt="">
+            <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
+        </div>
+        <button type="button" class="lightbox-next" id="lightboxNext" aria-label="Photo suivante"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+    </div>
+
+    <button id="scrollToTop" class="btn fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible" aria-label="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Filtrage de la galerie
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        function applyFilter(filter) {
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                const show = filter === 'all' || category === filter;
+                item.classList.toggle('gallery-item--hidden', !show);
+            });
+        }
+        applyFilter('all');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                applyFilter(button.getAttribute('data-filter'));
+            });
+        });
+
+        // Lightbox plein écran avec navigation précédent/suivant
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('.lightbox-inner img');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        function getVisibleGalleryImages() {
+            return Array.from(document.querySelectorAll('.js-gallery .gallery-item:not(.gallery-item--hidden) img'));
+        }
+
+        let lightboxCurrentIndex = 0;
+        let lightboxVisibleImages = [];
+
+        function openLightboxAtIndex(visibleImages, index) {
+            lightboxVisibleImages = visibleImages;
+            lightboxCurrentIndex = index;
+            const img = lightboxVisibleImages[lightboxCurrentIndex];
+            if (img) {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+            }
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            lightbox.focus();
+        }
+
+        function showLightboxImage(index) {
+            if (lightboxVisibleImages.length === 0) return;
+            lightboxCurrentIndex = (index + lightboxVisibleImages.length) % lightboxVisibleImages.length;
+            const img = lightboxVisibleImages[lightboxCurrentIndex];
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+        }
+
+        function goPrev() {
+            showLightboxImage(lightboxCurrentIndex - 1);
+        }
+
+        function goNext() {
+            showLightboxImage(lightboxCurrentIndex + 1);
+        }
+
+        document.querySelectorAll('.js-gallery img').forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                const visible = getVisibleGalleryImages();
+                const index = visible.indexOf(img);
+                if (index !== -1) openLightboxAtIndex(visible, index);
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); goPrev(); });
+        lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); goNext(); });
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('is-open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+        });
+
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        }
+        function toggleMobileSubmenu() {
+            document.getElementById('mobileSubmenu').classList.toggle('hidden');
+        }
+
+        function setupScrollAndAria() {
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            if (!scrollToTopButton) return;
+            function updateScrollButtonVisibility() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.remove('opacity-0', 'invisible');
+                    scrollToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopButton.classList.add('opacity-0', 'invisible');
+                    scrollToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            }
+            window.addEventListener('scroll', updateScrollButtonVisibility, { passive: true });
+            updateScrollButtonVisibility(); // état initial (page déjà scrollée ou script différé sur mobile)
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        if (window.matchMedia('(max-width: 767px)').matches) {
+            if (typeof requestIdleCallback !== 'undefined') {
+                requestIdleCallback(function() { setupScrollAndAria(); }, { timeout: 1200 });
+            } else {
+                setTimeout(setupScrollAndAria, 200);
+            }
+        } else {
+            setupScrollAndAria();
+        }
+    </script>
+</body>
+</html>

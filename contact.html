@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Contact - Le Parc des Loulous | Garderie, éducation & activités pour chiens</title>
+    <meta name="description" content="Contactez Le Parc des Loulous à Clermont-Ferrand. Réservation garderie, rendez-vous éducation, questions : formulaire et coordonnées. Réponse sous 24h.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="preload" as="image" href="images/Bannières/Selfie_groupe_de_chiens.webp">
+    <link rel="preload" href="Police/Chewy/Chewy-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="Police/Andika/Andika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="Police/Paprika/Paprika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+</head>
+<body class="body-bg">
+    <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+    <header class="header-nav">
+        <nav class="bg-white shadow-lg fixed w-full z-50">
+            <div class="header-nav-inner w-full px-3">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="logo-container">
+                            <img src="./Logo Submarck.png" alt="Logo Le Parc des Loulous" class="logo-image" width="75" height="75" decoding="async">
+                            <span class="logo-text">Le Parc des Loulous</span>
+                        </a>
+                    </div>
+                    <div class="header-nav-menu hidden md:block">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Accueil</a>
+                            <a href="parc.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Le Parc</a>
+                            <div class="relative group">
+                                <button class="nav-link text-gray-700 hover:text-primary px-3 py-2">Nos Services</button>
+                                <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg py-2 rounded-lg nav-dropdown">
+                                    <a href="services/garderie.html" class="nav-dropdown-link">Garderie collective</a>
+                                    <a href="services/centre-aere.html" class="nav-dropdown-link">Centre aéré</a>
+                                    <a href="services/ecole.html" class="nav-dropdown-link">École du chiot & des ados</a>
+                                    <a href="services/education.html" class="nav-dropdown-link">Éducation & comportement</a>
+                                    <a href="services/activites.html" class="nav-dropdown-link">Activités mentales</a>
+                                    <a href="services/detente.html" class="nav-dropdown-link">Détente & relaxation</a>
+                                    <a href="services/photo.html" class="nav-dropdown-link">Photographie</a>
+                                    <a href="services/ateliers.html" class="nav-dropdown-link">Ateliers & événements</a>
+                                </div>
+                            </div>
+                            <a href="galerie.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Galerie</a>
+                            <a href="tarifs.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Tarifs</a>
+                            <a href="contact.html" class="btn active" aria-current="page">Contact</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button" class="mobile-menu-button p-2 rounded-md hover:bg-gray-100" onclick="toggleMobileMenu()" aria-label="Ouvrir ou fermer le menu" aria-expanded="false" id="menuToggle">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu hidden md:hidden">
+                <a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Accueil</a>
+                <a href="parc.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Le Parc</a>
+                <div class="relative">
+                    <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" onclick="toggleMobileSubmenu()">Nos Services <span class="float-right">▼</span></button>
+                    <div id="mobileSubmenu" class="hidden bg-gray-50">
+                        <a href="services/garderie.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Garderie collective</a>
+                        <a href="services/centre-aere.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Centre aéré</a>
+                        <a href="services/ecole.html" class="block px-6 py-2 text-sm hover:bg-gray-100">École du chiot & des ados</a>
+                        <a href="services/education.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Éducation & comportement</a>
+                        <a href="services/activites.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Activités mentales</a>
+                        <a href="services/detente.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Détente & relaxation</a>
+                        <a href="services/photo.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Photographie</a>
+                        <a href="services/ateliers.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Ateliers & événements</a>
+                    </div>
+                </div>
+                <a href="galerie.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galerie</a>
+                <a href="tarifs.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tarifs</a>
+                <a href="contact.html" class="block px-4 py-2 text-sm hover:bg-gray-100 active" aria-current="page">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bannière Hero -->
+    <section class="relative h-screen flex flex-col" aria-label="Contact">
+        <div class="absolute inset-0">
+            <img src="images/Bannières/Selfie_groupe_de_chiens.webp" alt="Chiens accueillants : contactez le Parc des Loulous à Clermont-Ferrand" class="w-full h-full object-cover object-center" fetchpriority="high" decoding="async" width="1920" height="1080">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <h1 class="font-chewy text-5xl md:text-7xl font-bold text-white mb-5 drop-shadow-2xl">Contactez-nous</h1>
+            <p class="font-paprika text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 hero-text-shadow">
+                Une question ? Un rendez-vous ? Nous serons ravis de vous répondre et d'accueillir votre loulou.
+            </p>
+            <a href="#contenu-principal" class="hero-cta font-paprika inline-flex items-center gap-2 px-8 py-3 shadow-lg hover:opacity-90 mb-8" aria-label="Descendre au contenu">Nous écrire</a>
+            <a href="#contenu-principal" class="hero-scroll-link font-paprika inline-flex flex-col items-center text-white transition-colors" aria-label="Descendre au contenu">
+                <i class="fas fa-chevron-down animate-bounce-slow text-white drop-shadow-md" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+    <main id="contenu-principal" class="pt-4 scroll-mt-20">
+        <!-- Intro + visuels Contact -->
+        <section class="pt-10 md:pt-14 pb-12 md:pb-16 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-stretch">
+                    <div>
+                        <h2 class="section-title-home text-3xl md:text-4xl font-bold mb-6">Parlons de votre chien</h2>
+                        <p class="text-gray-600 text-lg mb-4 text-justify">
+                            Que ce soit pour une <strong>première visite</strong>, une réservation en garderie ou une question sur nos services, l'équipe du Parc des Loulous est à votre écoute.
+                        </p>
+                        <p class="text-gray-600 text-lg mb-6 text-justify">
+                            Remplissez le formulaire ou appelez-nous directement. Nous nous efforçons de répondre à toutes les demandes dans les <strong>24 heures ouvrables</strong>.
+                        </p>
+                        <ul class="space-y-2 text-gray-600 text-lg mb-6">
+                            <li class="flex items-center"><i class="fas fa-phone text-primary mr-2 w-5 text-center" aria-hidden="true"></i> <span>04 73 12 34 56</span></li>
+                            <li class="flex items-center"><i class="fas fa-envelope text-primary mr-2 w-5 text-center" aria-hidden="true"></i> <span class="break-all">contact@parcdesloulous.fr</span></li>
+                        </ul>
+                        <div class="flex justify-center">
+                            <a href="#contact-form" class="btn inline-flex items-center gap-2">
+                                Envoyer un message <i class="fas fa-arrow-right text-white text-sm" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg h-full min-h-[320px]">
+                        <img src="images/Contact/Chiot_qui_court_apres_sa_balle.webp" alt="Chien accueillant : parlons de votre chien et de vos besoins" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-form" class="pt-12 md:pt-16 pb-12 md:pb-16 bg-section-gradient scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch">
+                    <!-- Formulaire de contact -->
+                    <div class="card p-6 sm:p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+                            <h2 class="text-2xl font-bold">Envoyez-nous un message</h2>
+                            <span class="inline-flex items-center gap-1.5 text-sm text-green font-medium bg-green/10 px-3 py-1.5 rounded-full">
+                                <i class="fas fa-clock" aria-hidden="true"></i> Réponse sous 24h
+                            </span>
+                        </div>
+                        <form class="space-y-6" id="contactForm" novalidate>
+                            <div>
+                                <label for="name" class="block mb-2 font-medium text-lg text-gray-700">Nom complet</label>
+                                <div class="relative">
+                                    <input type="text" id="name" name="name" placeholder="Votre nom et prénom" autocomplete="name" class="form-input w-full text-lg placeholder-gray-400 px-4 pr-12 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
+                                    <i class="fas fa-user absolute right-4 top-1/2 -translate-y-1/2 text-primary text-lg pointer-events-none" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium text-lg text-gray-700">Email</label>
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" placeholder="votre@email.fr" autocomplete="email" class="form-input w-full text-lg placeholder-gray-400 px-4 pr-12 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
+                                    <i class="fas fa-envelope absolute right-4 top-1/2 -translate-y-1/2 text-primary text-lg pointer-events-none" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="phone" class="block mb-2 font-medium text-lg text-gray-700">Téléphone</label>
+                                <div class="relative">
+                                    <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" autocomplete="tel" class="form-input w-full text-lg placeholder-gray-400 px-4 pr-12 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                                    <i class="fas fa-phone absolute right-4 top-1/2 -translate-y-1/2 text-primary text-lg pointer-events-none" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block mb-2 font-medium text-lg text-gray-700">Sujet</label>
+                                <div class="relative">
+                                    <select id="subject" name="subject" class="form-input w-full text-lg placeholder-gray-400 px-4 pr-12 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 appearance-none bg-white" required>
+                                        <option value="">Choisissez un sujet</option>
+                                        <option value="garderie">Garderie</option>
+                                        <option value="education">Éducation</option>
+                                        <option value="activites">Activités</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-primary text-lg pointer-events-none" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="message" class="block mb-2 font-medium text-lg text-gray-700">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Décrivez votre demande ou votre question..." class="form-input w-full text-lg placeholder-gray-400 px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-y min-h-[140px]" required></textarea>
+                            </div>
+                            <button type="submit" class="btn w-full py-4 rounded-xl font-bold text-lg mt-2">
+                                <i class="fas fa-paper-plane text-primary mr-2" aria-hidden="true"></i>Envoyer le message
+                            </button>
+                        </form>
+                        <div class="mt-6">
+                            <img src="images/Contact/Chien_qui_dit_bonjour.webp" alt="Le Parc des Loulous vous attend : équipe et chiens heureux" class="w-full h-auto object-contain max-h-[300px] sm:max-h-[340px] md:max-h-[400px] mx-auto block" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Informations de contact -->
+                    <div class="flex flex-col gap-8 md:min-h-0">
+                        <div class="card p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow duration-300 flex-shrink-0">
+                            <h2 class="text-2xl font-bold mb-8">Informations pratiques</h2>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-2xl text-primary flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg">Adresse</h3>
+                                        <p class="text-gray-600 text-lg leading-relaxed">Le Parc des Loulous<br>123 Avenue des Chiens<br>63000 Clermont-Ferrand</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="text-2xl text-primary flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                        <i class="fas fa-phone" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg">Téléphone</h3>
+                                        <p class="text-gray-600 text-lg">04 73 12 34 56</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="text-2xl text-primary flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg">Email</h3>
+                                        <p class="text-gray-600 text-lg break-all">contact@parcdesloulous.fr</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="text-2xl text-primary flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                        <i class="fas fa-clock" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg">Horaires</h3>
+                                        <p class="text-gray-600 text-lg leading-relaxed">Lundi - Vendredi : 8h - 19h<br>Samedi : 9h - 17h<br>Dimanche : Fermé</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carte Google Maps -->
+                        <div class="card p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow duration-300 flex-1 flex flex-col min-h-0">
+                            <h2 class="text-2xl font-bold mb-6 flex-shrink-0">Notre localisation</h2>
+                            <div class="rounded-lg overflow-hidden flex-1 min-h-[380px] md:min-h-[420px]">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.0!2d3.0867!3d45.7772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f71b9b4230fb0b%3A0x5c2b4615a4f0d1a0!2sClermont-Ferrand!5e0!3m2!1sfr!2sfr!4v1234567890"
+                                    width="100%"
+                                    height="420"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="rounded-lg w-full block"
+                                    title="Carte - Le Parc des Loulous">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="pt-12 md:pt-16 pb-16 md:pb-20 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 container">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Questions fréquentes</h2>
+                <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Quelques réponses utiles avant de nous contacter.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="card p-6 hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Comment prendre rendez-vous ?</h3>
+                        <p class="text-gray-600 text-lg">Vous pouvez prendre rendez-vous par téléphone, email ou via notre formulaire de contact. Nous vous répondrons dans les plus brefs délais.</p>
+                    </div>
+                    <div class="card p-6 hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Quels sont les délais de réponse ?</h3>
+                        <p class="text-gray-600 text-lg">Nous nous efforçons de répondre à toutes les demandes dans les 24 heures ouvrables.</p>
+                    </div>
+                    <div class="card p-6 hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Comment se déroule une première visite ?</h3>
+                        <p class="text-gray-600 text-lg">La première visite permet de faire connaissance avec votre chien et d'évaluer ses besoins. Elle dure environ 1 heure.</p>
+                    </div>
+                    <div class="card p-6 hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Quels documents sont nécessaires ?</h3>
+                        <p class="text-gray-600 text-lg">Vaccins à jour, certificat de bonne santé et documents d'identification de votre chien sont requis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Réseaux sociaux -->
+        <section class="cta-contact py-16 md:py-20 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 container text-center">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold mb-4">Suivez-nous</h2>
+                <p class="text-lg mb-4 max-w-xl mx-auto opacity-95">Restez informé de nos actualités, photos du parc et conseils pour votre chien.</p>
+                <div class="flex justify-center gap-8">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="text-4xl transition-colors duration-300" aria-label="Facebook - Le Parc des Loulous">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="text-4xl transition-colors duration-300" aria-label="Instagram - Le Parc des Loulous">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="text-4xl transition-colors duration-300" aria-label="X (anciennement Twitter) - Le Parc des Loulous">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-cream">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- Identité et adresse -->
+                <div class="footer-brand text-center">
+                    <div class="flex flex-col items-center">
+                        <a href="index.html" aria-label="Retour à l'accueil">
+                            <img src="./Logo principal.png" alt="Logo Le Parc des Loulous" class="footer-logo w-48 max-w-full h-auto mb-3" loading="lazy" decoding="async">
+                        </a>
+                        <address class="footer-address not-italic mt-2">
+                            123 Avenue des Chiens<br>
+                            63000 Clermont-Ferrand
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact text-center">
+                    <p class="footer-label">Téléphone :</p>
+                    <p class="footer-value">04 73 12 34 56</p>
+                    <p class="footer-label mt-4">Mail :</p>
+                    <p class="footer-value">contact@parcdesloulous.fr</p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-nav text-center">
+                    <ul class="footer-nav-list space-y-2 text-base">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="parc.html">Le Parc</a></li>
+                        <li><a href="services/garderie.html">Nos Services</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="footer-social">
+                    <p class="footer-social-title text-center">Suivez-nous sur <br>les réseaux sociaux</p>
+                    <div class="footer-social-icons flex items-center justify-center gap-3 mt-4">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-x" aria-label="X (anciennement Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" class="btn fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible z-40" aria-label="Retour en haut de la page">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Menu mobile
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            const btn = document.getElementById('menuToggle');
+            menu.classList.toggle('hidden');
+            if (btn) btn.setAttribute('aria-expanded', menu.classList.contains('hidden') ? 'false' : 'true');
+        }
+        function toggleMobileSubmenu() {
+            document.getElementById('mobileSubmenu').classList.toggle('hidden');
+        }
+
+        // Formulaire
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2" aria-hidden="true"></i> Envoi en cours...';
+            // Simuler envoi (à remplacer par un vrai envoi backend)
+            setTimeout(() => {
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                const msg = document.createElement('p');
+                msg.className = 'mt-4 p-4 rounded-xl bg-green/10 text-green font-medium text-center';
+                msg.setAttribute('role', 'status');
+                msg.innerHTML = '<i class="fas fa-check-circle mr-2" aria-hidden="true"></i> Votre message a bien été envoyé. Nous vous répondrons sous 24h.';
+                form.appendChild(msg);
+                setTimeout(() => msg.remove(), 6000);
+            }, 800);
+        });
+
+        // Bouton retour en haut : sur mobile, différer pour ne pas bloquer le premier rendu
+        function setupScrollAndAria() {
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            if (!scrollToTopButton) return;
+            function updateScrollButtonVisibility() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.remove('opacity-0', 'invisible');
+                    scrollToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopButton.classList.add('opacity-0', 'invisible');
+                    scrollToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            }
+            window.addEventListener('scroll', updateScrollButtonVisibility, { passive: true });
+            updateScrollButtonVisibility(); // état initial (page déjà scrollée ou script différé sur mobile)
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        if (window.matchMedia('(max-width: 767px)').matches) {
+            if (typeof requestIdleCallback !== 'undefined') {
+                requestIdleCallback(function() { setupScrollAndAria(); }, { timeout: 1200 });
+            } else {
+                setTimeout(setupScrollAndAria, 200);
+            }
+        } else {
+            setupScrollAndAria();
+        }
+    </script>
+</body>
+</html> 

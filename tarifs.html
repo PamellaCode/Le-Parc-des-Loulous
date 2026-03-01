@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Tarifs - Le Parc des Loulous</title>
+    <meta name="description" content="Tarifs du Parc des Loulous : formules garderie, centre aéré, éducation et forfaits. Transparence et adaptés à vos besoins.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="preload" as="image" href="images/Bannières/Chien_heureux_en_plein_air.webp">
+    <link rel="preload" href="Police/Chewy/Chewy-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="Police/Andika/Andika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="Police/Paprika/Paprika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+</head>
+<body class="body-bg">
+    <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+    <header class="header-nav">
+        <nav class="bg-white shadow-lg fixed w-full z-50">
+            <div class="header-nav-inner w-full px-3">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="logo-container">
+                            <img src="./Logo Submarck.png" alt="Logo Le Parc des Loulous" class="logo-image" width="75" height="75" decoding="async">
+                            <span class="logo-text">Le Parc des Loulous</span>
+                        </a>
+                    </div>
+                    <div class="header-nav-menu hidden md:block">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Accueil</a>
+                            <a href="parc.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Le Parc</a>
+                            <div class="relative group">
+                                <button class="nav-link text-gray-700 hover:text-primary px-3 py-2">Nos Services</button>
+                                <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg py-2 rounded-lg nav-dropdown">
+                                    <a href="services/garderie.html" class="nav-dropdown-link">Garderie collective</a>
+                                    <a href="services/centre-aere.html" class="nav-dropdown-link">Centre aéré</a>
+                                    <a href="services/ecole.html" class="nav-dropdown-link">École du chiot & des ados</a>
+                                    <a href="services/education.html" class="nav-dropdown-link">Éducation & comportement</a>
+                                    <a href="services/activites.html" class="nav-dropdown-link">Activités mentales</a>
+                                    <a href="services/detente.html" class="nav-dropdown-link">Détente & relaxation</a>
+                                    <a href="services/photo.html" class="nav-dropdown-link">Photographie</a>
+                                    <a href="services/ateliers.html" class="nav-dropdown-link">Ateliers & événements</a>
+                                </div>
+                            </div>
+                            <a href="galerie.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Galerie</a>
+                            <a href="tarifs.html" class="nav-link active text-gray-700 hover:text-primary px-3 py-2" aria-current="page">Tarifs</a>
+                            <a href="contact.html" class="btn">Contact</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button" class="mobile-menu-button p-2 rounded-md hover:bg-gray-100" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu de navigation" aria-expanded="false" id="menuToggle">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu hidden md:hidden">
+                <a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Accueil</a>
+                <a href="parc.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Le Parc</a>
+                <div class="relative">
+                    <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" onclick="toggleMobileSubmenu()">Nos Services <span class="float-right">▼</span></button>
+                    <div id="mobileSubmenu" class="hidden bg-gray-50">
+                        <a href="services/garderie.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Garderie collective</a>
+                        <a href="services/centre-aere.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Centre aéré</a>
+                        <a href="services/ecole.html" class="block px-6 py-2 text-sm hover:bg-gray-100">École du chiot & des ados</a>
+                        <a href="services/education.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Éducation & comportement</a>
+                        <a href="services/activites.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Activités mentales</a>
+                        <a href="services/detente.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Détente & relaxation</a>
+                        <a href="services/photo.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Photographie</a>
+                        <a href="services/ateliers.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Ateliers & événements</a>
+                    </div>
+                </div>
+                <a href="galerie.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galerie</a>
+                <a href="tarifs.html" class="block px-4 py-2 text-sm hover:bg-gray-100 active" aria-current="page">Tarifs</a>
+                <a href="contact.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bannière Hero -->
+    <section class="relative h-screen flex flex-col" aria-label="Nos tarifs">
+        <div class="absolute inset-0">
+            <img src="images/Bannières/Chien_heureux_en_plein_air.webp" alt="Chien heureux : découvrez nos tarifs et formules au Parc des Loulous" class="w-full h-full object-cover object-center" fetchpriority="high" decoding="async" width="1920" height="1080">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <h1 class="font-chewy text-5xl md:text-7xl font-bold text-white mb-5 drop-shadow-2xl">Nos Tarifs</h1>
+            <p class="font-paprika text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 hero-text-shadow">
+                Des tarifs transparents et adaptés à vos besoins. Formules à l'unité ou abonnements pour simplifier votre budget.
+            </p>
+            <a href="#contenu-principal" class="hero-cta font-paprika inline-flex items-center gap-2 px-8 py-3 shadow-lg hover:opacity-90 mb-8" aria-label="Descendre au contenu">Découvrir</a>
+            <a href="#contenu-principal" class="hero-scroll-link font-paprika inline-flex flex-col items-center text-white transition-colors" aria-label="Descendre au contenu">
+                <i class="fas fa-chevron-down animate-bounce-slow text-white drop-shadow-md" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" class="btn fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <main id="contenu-principal" class="pt-4">
+        <!-- Intro + visuels Tarif -->
+        <section class="pt-10 md:pt-14 pb-12 md:pb-16 bg-cream scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">Tarifs clairs, services adaptés</h2>
+                        <p class="text-gray-600 text-lg mb-4 text-justify">
+                            Chez Le Parc des Loulous, nous proposons des <strong>tarifs à l'unité</strong> pour la garderie, le transport, l'accès au parc et les activités, ainsi que des <strong>formules d'abonnement</strong> pour les familles qui nous font confiance au quotidien.
+                        </p>
+                        <p class="text-gray-600 text-lg mb-6 text-justify">
+                            Tous nos prix sont indiqués TTC. N'hésitez pas à nous contacter pour un devis personnalisé ou pour en savoir plus sur nos abonnements.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="#tarifs-table" class="btn inline-flex items-center gap-2">
+                                Voir le détail des tarifs <i class="fas fa-arrow-down text-primary text-sm" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg h-full min-h-[240px]">
+                        <img src="images/Tarif/Regard_de_chien.webp" alt="Moment de vie au parc : garderie, activités et forfaits" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tableau des tarifs -->
+        <section id="tarifs-table" class="pt-12 md:pt-16 pb-12 md:pb-16 bg-section-gradient scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 container">
+                <div class="card overflow-hidden shadow-lg rounded-xl">
+                    <div class="bg-primary p-6 text-cream">
+                        <h2 class="text-2xl font-bold text-center">Nos Services et Tarifs</h2>
+                        <p class="text-center mt-2">Des tarifs transparents pour tous nos services</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="pricing-table w-full">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-6 py-4 text-left font-semibold">Service</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Formule</th>
+                                    <th class="px-6 py-4 text-right font-semibold">Tarif TTC</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-dog mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Garderie</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">1/2 journée (sans transport)</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">15€</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-dog mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Garderie</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Journée complète (sans transport)</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">25€</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-sun mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Centre aéré</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Journée (vacances, stages)</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">Sur devis</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-car mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Transport</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Aller-retour (Clermont + alentours)</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">+5€</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-paw mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Accès au parc</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">1h encadrée</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">10€</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-graduation-cap mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">École du chiot</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Pack 5 séances</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">90€</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-book mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Éducation individuelle</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">1h</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">45€</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-brain mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Activités mentales</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Atelier 30 min</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">20€</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-spa mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Détente & relaxation</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Séance (massage, détente)</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">Sur devis</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-camera mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Photographie</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Séance photo</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">À partir de 40€</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-palette mr-3 text-primary text-xl"></i>
+                                            <span class="font-medium">Ateliers & événements</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Atelier ou événement (selon programme)</td>
+                                    <td class="px-6 py-4 text-right font-bold text-primary">Sur devis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bg-gray-50 p-4 text-center text-sm">
+                        <p>* Les tarifs sont susceptibles de varier selon la période et la demande</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formules d'abonnement -->
+        <section class="pt-12 md:pt-16 pb-12 md:pb-16 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 container">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Formules d'abonnement</h2>
+                <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Économisez et simplifiez votre organisation avec nos formules mensuelles.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto">
+                    <div class="card p-6 flex flex-col transform hover:scale-[1.02] transition-transform duration-300 h-full">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-star text-4xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-center">Formule Basique</h3>
+                        <ul class="space-y-3 text-base text-gray-600 flex-1 min-h-0">
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> 5 jours de garderie par mois</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> Transport inclus</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> Accès au parc illimité</li>
+                        </ul>
+                        <div class="mt-auto pt-6 border-t border-gray-200/60">
+                            <p class="text-2xl font-bold text-primary text-center">130€<span class="text-sm font-normal opacity-80">/mois</span></p>
+                            <div class="text-center mt-4">
+                                <a href="contact.html" class="btn">Choisir cette formule</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-formule-premium p-6 pt-8 flex flex-col border-2 border-primary shadow-xl overflow-visible h-full transform hover:scale-[1.02] transition-transform duration-300 md:-mt-2 md:mb-2 md:shadow-2xl">
+                        <div class="text-center mb-3">
+                            <span class="inline-block bg-primary text-cream px-5 py-1.5 rounded-full text-sm font-bold">Populaire</span>
+                        </div>
+                        <div class="text-center mb-4">
+                            <i class="fas fa-crown text-4xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-center">Formule Premium</h3>
+                        <ul class="space-y-3 text-base text-gray-600 flex-1 min-h-0">
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> 10 jours de garderie par mois</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> Transport inclus</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> Accès au parc illimité</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> 2 séances d'éducation</li>
+                        </ul>
+                        <div class="mt-auto pt-6 border-t border-gray-200/60">
+                            <p class="text-2xl font-bold text-primary text-center premium-price">350€<span class="text-sm font-normal opacity-80">/mois</span></p>
+                            <div class="text-center mt-4">
+                                <a href="contact.html" class="btn">Choisir cette formule</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-6 flex flex-col transform hover:scale-[1.02] transition-transform duration-300 h-full">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-users text-4xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-center">Formule Famille</h3>
+                        <ul class="space-y-3 text-base text-gray-600 flex-1 min-h-0">
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> 15 jours de garderie par mois</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> Transport inclus</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> Accès au parc illimité</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> 4 séances d'éducation</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0"></i> 1 séance photo</li>
+                        </ul>
+                        <div class="mt-auto pt-6 border-t border-gray-200/60">
+                            <p class="text-2xl font-bold text-primary text-center">600€<span class="text-sm font-normal opacity-80">/mois</span></p>
+                            <div class="text-center mt-4">
+                                <a href="contact.html" class="btn">Choisir cette formule</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="pt-12 md:pt-16 pb-16 md:pb-20 bg-section-gradient">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 container">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Questions fréquentes</h2>
+                <p class="text-center text-gray-600 text-lg mb-8 md:mb-12">Réponses aux questions les plus courantes sur nos tarifs et réservations.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+                    <div class="space-y-4">
+                        <div class="card p-6 hover:shadow-lg transition-shadow">
+                            <h3 class="text-xl font-bold mb-2">Comment fonctionne le système de réservation ?</h3>
+                            <p class="text-gray-600 text-lg">Les réservations peuvent être effectuées par téléphone ou via notre formulaire de contact. Nous vous recommandons de réserver au moins 24 h à l'avance.</p>
+                        </div>
+                        <div class="card p-6 hover:shadow-lg transition-shadow">
+                            <h3 class="text-xl font-bold mb-2">Quels sont les horaires d'ouverture ?</h3>
+                            <p class="text-gray-600 text-lg">Nous sommes ouverts du lundi au vendredi de 8 h à 19 h, et le samedi de 9 h à 17 h. Les horaires peuvent varier selon les périodes de l'année.</p>
+                        </div>
+                        <div class="card p-6 hover:shadow-lg transition-shadow">
+                            <h3 class="text-xl font-bold mb-2">Comment se déroule le transport ?</h3>
+                            <p class="text-gray-600 text-lg">Notre service de transport couvre Clermont et ses environs. Nous assurons le ramassage et le retour de votre chien à domicile.</p>
+                        </div>
+                        <div class="card p-6 hover:shadow-lg transition-shadow">
+                            <h3 class="text-xl font-bold mb-2">Peut-on annuler une réservation ?</h3>
+                            <p class="text-gray-600 text-lg">Les annulations sont possibles jusqu'à 24 h avant la date prévue. Au-delà, des frais pourront être appliqués.</p>
+                        </div>
+                    </div>
+                    <div class="min-h-[280px] lg:min-h-0 flex overflow-hidden">
+                        <img src="images/Tarif/Chien_qui_salut.webp" alt="Chien attentif : questions fréquentes sur nos tarifs et réservations" class="w-full h-full object-cover object-center" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-block bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+                <div class="cta-inner">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Des questions sur nos tarifs ?</h2>
+                    <p class="text-xl mb-8">Contactez-nous pour plus d'informations ou pour personnaliser votre formule.</p>
+                    <a href="contact.html" class="btn bg-white text-primary hover:bg-gray-100 inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold">
+                        Nous contacter <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-cream">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- Identité et adresse -->
+                <div class="footer-brand text-center">
+                    <div class="flex flex-col items-center">
+                        <a href="index.html" aria-label="Retour à l'accueil">
+                            <img src="./Logo principal.png" alt="Logo Le Parc des Loulous" class="footer-logo w-48 max-w-full h-auto mb-3" loading="lazy" decoding="async">
+                        </a>
+                        <address class="footer-address not-italic mt-2">
+                            123 Avenue des Chiens<br>
+                            63000 Clermont-Ferrand
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact text-center">
+                    <p class="footer-label">Téléphone :</p>
+                    <p class="footer-value">04 73 12 34 56</p>
+                    <p class="footer-label mt-4">Mail :</p>
+                    <p class="footer-value">contact@parcdesloulous.fr</p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-nav text-center">
+                    <ul class="footer-nav-list space-y-2 text-base">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="parc.html">Le Parc</a></li>
+                        <li><a href="services/garderie.html">Nos Services</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="tarifs.html" class="active" aria-current="page">Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="footer-social">
+                    <p class="footer-social-title text-center">Suivez-nous sur <br> les réseaux sociaux</p>
+                    <div class="footer-social-icons flex items-center justify-center gap-3 mt-4">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-x" aria-label="X (anciennement Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        }
+        function toggleMobileSubmenu() {
+            document.getElementById('mobileSubmenu').classList.toggle('hidden');
+        }
+
+        // Bouton retour en haut : sur mobile, différer pour ne pas bloquer le premier rendu
+        function setupScrollAndAria() {
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            if (!scrollToTopButton) return;
+            function updateScrollButtonVisibility() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.remove('opacity-0', 'invisible');
+                    scrollToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopButton.classList.add('opacity-0', 'invisible');
+                    scrollToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            }
+            window.addEventListener('scroll', updateScrollButtonVisibility, { passive: true });
+            updateScrollButtonVisibility(); // état initial (page déjà scrollée ou script différé sur mobile)
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
+                });
+            }
+        }
+        if (window.matchMedia('(max-width: 767px)').matches) {
+            if (typeof requestIdleCallback !== 'undefined') {
+                requestIdleCallback(function() { setupScrollAndAria(); }, { timeout: 1200 });
+            } else {
+                setTimeout(setupScrollAndAria, 200);
+            }
+        } else {
+            setupScrollAndAria();
+        }
+    </script>
+</body>
+</html> 

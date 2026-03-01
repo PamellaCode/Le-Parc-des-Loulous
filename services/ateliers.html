@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Ateliers & Événements - Le Parc des Loulous</title>
+    <link rel="preload" as="image" href="../images/Bannières/Chien_entoure_d_oeuf_de_paques_decore.webp">
+    <link rel="preload" href="../Police/Chewy/Chewy-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../Police/Andika/Andika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../Police/Paprika/Paprika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+</head>
+<body class="body-bg">
+    <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+    <!-- Lightbox plein écran -->
+    <div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Photo en grand" tabindex="-1">
+        <button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Photo précédente"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <div class="lightbox-inner">
+            <img src="" alt="">
+            <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
+        </div>
+        <button type="button" class="lightbox-next" id="lightboxNext" aria-label="Photo suivante"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+    </div>
+    <button id="scrollToTop" class="btn fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+    <header class="header-nav">
+        <nav class="bg-white shadow-lg fixed w-full z-50">
+            <div class="header-nav-inner w-full px-3">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex-shrink-0">
+                        <a href="../index.html" class="logo-container">
+                            <img src="../Logo Submarck.png" alt="Logo Le Parc des Loulous" class="logo-image" width="75" height="75" decoding="async">
+                            <span class="logo-text">Le Parc des Loulous</span>
+                        </a>
+                    </div>
+                    <div class="header-nav-menu hidden md:block">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="../index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Accueil</a>
+                            <a href="../parc.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Le Parc</a>
+                            <div class="relative group">
+                                <button class="nav-link active text-gray-700 hover:text-primary px-3 py-2" aria-current="page">Nos Services</button>
+                                <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg py-2 rounded-lg nav-dropdown">
+                                    <a href="garderie.html" class="nav-dropdown-link">Garderie collective</a>
+                                    <a href="centre-aere.html" class="nav-dropdown-link">Centre aéré</a>
+                                    <a href="ecole.html" class="nav-dropdown-link">École du chiot & des ados</a>
+                                    <a href="education.html" class="nav-dropdown-link">Éducation & comportement</a>
+                                    <a href="activites.html" class="nav-dropdown-link">Activités mentales</a>
+                                    <a href="detente.html" class="nav-dropdown-link">Détente & relaxation</a>
+                                    <a href="photo.html" class="nav-dropdown-link">Photographie</a>
+                                    <a href="ateliers.html" class="nav-dropdown-link">Ateliers & événements</a>
+                                </div>
+                            </div>
+                            <a href="../galerie.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Galerie</a>
+                            <a href="../tarifs.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Tarifs</a>
+                            <a href="../contact.html" class="btn">Contact</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button" class="mobile-menu-button p-2 rounded-md hover:bg-gray-100" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu de navigation" aria-expanded="false" id="menuToggle">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu hidden md:hidden">
+                <a href="../index.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Accueil</a>
+                <a href="../parc.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Le Parc</a>
+                <div class="relative">
+                    <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 active" onclick="toggleMobileSubmenu()">Nos Services <span class="float-right">▼</span></button>
+                    <div id="mobileSubmenu" class="hidden bg-gray-50">
+                        <a href="garderie.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Garderie collective</a>
+                        <a href="centre-aere.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Centre aéré</a>
+                        <a href="ecole.html" class="block px-6 py-2 text-sm hover:bg-gray-100">École du chiot & des ados</a>
+                        <a href="education.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Éducation & comportement</a>
+                        <a href="activites.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Activités mentales</a>
+                        <a href="detente.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Détente & relaxation</a>
+                        <a href="photo.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Photographie</a>
+                        <a href="ateliers.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Ateliers & événements</a>
+                    </div>
+                </div>
+                <a href="../galerie.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galerie</a>
+                <a href="../tarifs.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tarifs</a>
+                <a href="../contact.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bannière Hero -->
+    <section class="relative h-screen flex flex-col" aria-label="Ateliers et événements">
+        <div class="absolute inset-0">
+            <img src="../images/Bannières/Chien_entoure_d_oeuf_de_paques_decore.webp" alt="Ateliers et événements - Le Parc des Loulous" class="w-full h-full object-cover object-center" fetchpriority="high" decoding="async" width="1920" height="1080">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <h1 class="font-chewy text-5xl md:text-7xl font-bold text-white mb-5 drop-shadow-2xl">Ateliers & événements</h1>
+            <p class="font-paprika text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 hero-text-shadow">
+                Des moments uniques à partager avec votre compagnon.
+            </p>
+            <a href="#contenu-principal" class="hero-cta font-paprika inline-flex items-center gap-2 px-8 py-3 shadow-lg hover:opacity-90 mb-8" aria-label="Descendre au contenu">Découvrir</a>
+            <a href="#contenu-principal" class="hero-scroll-link font-paprika inline-flex flex-col items-center text-white transition-colors" aria-label="Descendre au contenu">
+                <i class="fas fa-chevron-down animate-bounce-slow text-white drop-shadow-md" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+    <main id="contenu-principal" class="pt-4 scroll-mt-20">
+        <!-- Intro + visuels -->
+        <section class="pt-10 md:pt-14 pb-12 md:pb-16 bg-cream scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <div>
+                        <h2 class="section-title-home text-3xl md:text-4xl font-bold mb-6">Ateliers et fêtes au Parc des Loulous</h2>
+                        <p class="text-gray-600 text-lg mb-4 text-justify">
+                            Tout au long de l'année, nous organisons des <strong>ateliers thématiques</strong> et des <strong>événements</strong> pour vous et votre chien : ateliers cognitifs, sportifs ou créatifs, fêtes de saison (Noël, Halloween, Pâques, été) et journées solidaires en partenariat avec les refuges.
+                        </p>
+                        <p class="text-gray-600 text-lg mb-6 text-justify">
+                            Ces moments permettent de renforcer la complicité avec votre loulou, de le sociabiliser et de créer des souvenirs inoubliables. Inscription à l'unité ou sur plusieurs séances selon les ateliers.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="../tarifs.html" class="btn inline-flex items-center gap-2">
+                                Voir les tarifs <i class="fas fa-arrow-right text-white text-sm" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg h-full min-h-[280px]">
+                        <img src="../images/Nos_services/Ateliers_et_evenements/Chiens_deguise_halloween.webp" alt="Événement et atelier au Parc des Loulous" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prochains événements -->
+        <section class="pt-12 md:pt-16 pb-12 md:pb-16 bg-section-gradient scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Prochains événements</h2>
+                <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Réservez votre place pour les prochaines dates.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <div class="space-y-6">
+                        <div class="card p-6 hover:shadow-lg transition-shadow duration-300 flex items-start gap-4">
+                            <div class="text-2xl text-primary flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <i class="fas fa-palette" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Atelier Peinture avec les pattes</h3>
+                                <p class="text-gray-600 mb-3">Samedi 15 juin – 14h00</p>
+                                <p class="text-gray-600 text-lg mb-4">Créez une œuvre d'art unique avec votre chien ! Peinture non toxique et ambiance ludique garantie.</p>
+                                <a href="../contact.html" class="btn inline-flex items-center gap-2">Réserver <i class="fas fa-arrow-right text-white text-sm" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="card p-6 hover:shadow-lg transition-shadow duration-300 flex items-start gap-4">
+                            <div class="text-2xl text-primary flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <i class="fas fa-sun" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Fête d'été des Loulous</h3>
+                                <p class="text-gray-600 mb-3">Dimanche 30 juin – Toute la journée</p>
+                                <p class="text-gray-600 text-lg mb-4">Grande journée festive avec animations, concours et surprises pour tous les chiens.</p>
+                                <a href="../contact.html" class="btn inline-flex items-center gap-2">Réserver <i class="fas fa-arrow-right text-white text-sm" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg h-full min-h-[320px]">
+                        <img src="../images/Nos_services/Ateliers_et_evenements/Chien_deguise_en_champignon.webp" alt="Moment d’atelier ou d’événement avec les chiens" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nos ateliers réguliers -->
+        <section class="pt-12 md:pt-16 pb-12 md:pb-16 bg-cream scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Nos ateliers réguliers</h2>
+                <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Cognitifs, sportifs ou créatifs : un programme pour tous les goûts.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl text-primary mb-3 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                            <i class="fas fa-brain" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ateliers cognitifs</h3>
+                        <ul class="space-y-2 text-gray-600 text-lg text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Jeux d'intelligence</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Résolution de problèmes</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Stimulation mentale</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> 2 sessions par mois</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl text-primary mb-3 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                            <i class="fas fa-bullseye" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ateliers sportifs</h3>
+                        <ul class="space-y-2 text-gray-600 text-lg text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Parcours d'agilité</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Jeux de coordination</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Exercices physiques</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Sessions hebdomadaires</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl text-primary mb-3 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                            <i class="fas fa-paint-brush" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ateliers créatifs</h3>
+                        <ul class="space-y-2 text-gray-600 text-lg text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Art canin</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Photos créatives</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Activités sensorielles</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> 1 session par mois</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Événements spéciaux -->
+        <section class="pt-12 md:pt-16 pb-12 md:pb-16 bg-section-gradient scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Événements spéciaux</h2>
+                <p class="text-center text-gray-600 text-lg mb-12">Fêtes de saison et rendez-vous solidaires.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <div class="rounded-xl overflow-hidden shadow-lg h-full min-h-[300px] order-2 lg:order-1">
+                        <img src="../images/Nos_services/Ateliers_et_evenements/Chien_avec_bonnet_de_noel.webp" alt="Événement spécial organisé au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 order-1 lg:order-2">
+                        <div>
+                            <h3 class="text-xl font-bold mb-5 flex items-center gap-2 text-primary"><i class="fas fa-gift" aria-hidden="true"></i> Fêtes saisonnières</h3>
+                            <div class="space-y-5">
+                                <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[140px]">
+                                    <h4 class="text-lg font-bold text-primary mb-2">Noël des Loulous</h4>
+                                    <p class="text-gray-600 text-base leading-relaxed">Photos avec le Père Noël et cadeaux pour tous.</p>
+                                </div>
+                                <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[140px]">
+                                    <h4 class="text-lg font-bold text-primary mb-2">Halloween canin</h4>
+                                    <p class="text-gray-600 text-base leading-relaxed">Défilé costumé et friandises spéciales.</p>
+                                </div>
+                                <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[140px]">
+                                    <h4 class="text-lg font-bold text-primary mb-2">Fête du printemps</h4>
+                                    <p class="text-gray-600 text-base leading-relaxed">Chasse aux trésors et activités en plein air.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-5 flex items-center gap-2 text-primary"><i class="fas fa-heart" aria-hidden="true"></i> Événements caritatifs</h3>
+                            <div class="space-y-5">
+                                <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[140px]">
+                                    <h4 class="text-lg font-bold text-primary mb-2">Journée adoption</h4>
+                                    <p class="text-gray-600 text-base leading-relaxed">En partenariat avec les refuges locaux.</p>
+                                </div>
+                                <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[140px]">
+                                    <h4 class="text-lg font-bold text-primary mb-2">Course solidaire</h4>
+                                    <p class="text-gray-600 text-base leading-relaxed">Course avec son chien pour une bonne cause.</p>
+                                </div>
+                                <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[140px]">
+                                    <h4 class="text-lg font-bold text-primary mb-2">Collecte de dons</h4>
+                                    <p class="text-gray-600 text-base leading-relaxed">Pour les associations de protection animale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie -->
+        <section class="pt-12 md:pt-16 pb-16 md:pb-20 bg-cream scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-2">Galerie ateliers & événements</h2>
+                <p class="text-center text-gray-600 text-lg mb-10">Quelques instants de nos ateliers et fêtes.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 js-gallery">
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Ateliers_et_evenements/Shiba_avec_traineau_de_cadeau.webp" alt="Atelier festif avec des chiens au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Ateliers_et_evenements/Cani_cross.webp" alt="Atelier thématique avec les chiens au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Ateliers_et_evenements/Chien_deguise_halloween.webp" alt="Événement des Loulous : animation et ateliers au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Ateliers_et_evenements/Cani_rando.webp" alt="Moment de partage lors d’un atelier au parc" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                </div>
+                <p class="text-center mt-10">
+                    <a href="../galerie.html" class="btn btn-green inline-flex items-center gap-2">
+                        Voir toute la galerie <i class="fas fa-images" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="cta-block bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <div class="cta-inner">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ne manquez aucun événement !</h2>
+                    <p class="text-xl mb-8">Inscrivez-vous à notre newsletter pour être informé des prochains ateliers et événements.</p>
+                    <form class="max-w-md mx-auto mb-8">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" placeholder="Votre email" class="flex-1 px-4 py-3 rounded-lg text-gray-900" aria-label="Adresse email">
+                            <button type="submit" class="btn bg-white text-primary hover:bg-gray-100 whitespace-nowrap">
+                                S'inscrire
+                            </button>
+                        </div>
+                    </form>
+                    <a href="../contact.html" class="btn bg-white text-primary hover:bg-gray-100 inline-flex items-center gap-2">
+                        Nous contacter <i class="fas fa-calendar-check text-primary text-sm" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-cream">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- Identité et adresse -->
+                <div class="footer-brand text-center">
+                    <div class="flex flex-col items-center">
+                        <a href="../index.html" aria-label="Retour à l'accueil">
+                            <img src="../Logo principal.png" alt="Logo Le Parc des Loulous" class="footer-logo w-48 max-w-full h-auto mb-3" loading="lazy" decoding="async">
+                        </a>
+                        <address class="footer-address not-italic mt-2">
+                            123 Avenue des Chiens<br>
+                            63000 Clermont-Ferrand
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact text-center">
+                    <p class="footer-label">Téléphone :</p>
+                    <p class="footer-value">04 73 12 34 56</p>
+                    <p class="footer-label mt-4">Mail :</p>
+                    <p class="footer-value">contact@parcdesloulous.fr</p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-nav text-center">
+                    <ul class="footer-nav-list space-y-2 text-base">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../parc.html">Le Parc</a></li>
+                        <li><a href="garderie.html" class="active" aria-current="page">Nos Services</a></li>
+                        <li><a href="../galerie.html">Galerie</a></li>
+                        <li><a href="../tarifs.html">Tarifs</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="footer-social">
+                    <p class="footer-social-title text-center">Suivez-nous sur <br> les réseaux sociaux</p>
+                    <div class="footer-social-icons flex items-center justify-center gap-3 mt-4">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-x" aria-label="X (anciennement Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox plein écran avec navigation précédent/suivant
+        (function() {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox) return;
+            const lightboxImg = lightbox.querySelector('.lightbox-inner img');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxPrev = document.getElementById('lightboxPrev');
+            const lightboxNext = document.getElementById('lightboxNext');
+            function getVisibleGalleryImages() {
+                return Array.from(document.querySelectorAll('.js-gallery img'));
+            }
+            let lightboxCurrentIndex = 0;
+            let lightboxVisibleImages = [];
+            function openLightboxAtIndex(visibleImages, index) {
+                lightboxVisibleImages = visibleImages;
+                lightboxCurrentIndex = index;
+                const img = lightboxVisibleImages[lightboxCurrentIndex];
+                if (img) {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                }
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                lightbox.focus();
+            }
+            function showLightboxImage(index) {
+                if (lightboxVisibleImages.length === 0) return;
+                lightboxCurrentIndex = (index + lightboxVisibleImages.length) % lightboxVisibleImages.length;
+                const img = lightboxVisibleImages[lightboxCurrentIndex];
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+            }
+            function goPrev() { showLightboxImage(lightboxCurrentIndex - 1); }
+            function goNext() { showLightboxImage(lightboxCurrentIndex + 1); }
+            document.querySelectorAll('.js-gallery img').forEach(img => {
+                img.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const visible = getVisibleGalleryImages();
+                    const index = visible.indexOf(img);
+                    if (index !== -1) openLightboxAtIndex(visible, index);
+                });
+            });
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+            if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+            if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); goPrev(); });
+            if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); goNext(); });
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
+                if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+            });
+        })();
+
+        // Menu mobile
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        }
+        function toggleMobileSubmenu() {
+            document.getElementById('mobileSubmenu').classList.toggle('hidden');
+        }
+
+        // Bouton retour en haut : sur mobile, différer pour ne pas bloquer le premier rendu
+        function setupScrollAndAria() {
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            if (!scrollToTopButton) return;
+            function updateScrollButtonVisibility() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.remove('opacity-0', 'invisible');
+                    scrollToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopButton.classList.add('opacity-0', 'invisible');
+                    scrollToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            }
+            window.addEventListener('scroll', updateScrollButtonVisibility, { passive: true });
+            updateScrollButtonVisibility(); // état initial (page déjà scrollée ou script différé sur mobile)
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
+                });
+            }
+        }
+        if (window.matchMedia('(max-width: 767px)').matches) {
+            if (typeof requestIdleCallback !== 'undefined') {
+                requestIdleCallback(function() { setupScrollAndAria(); }, { timeout: 1200 });
+            } else {
+                setTimeout(setupScrollAndAria, 200);
+            }
+        } else {
+            setupScrollAndAria();
+        }
+    </script>
+</body>
+</html> 

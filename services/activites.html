@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Activités Mentales - Le Parc des Loulous</title>
+    <link rel="preload" as="image" href="../images/Bannières/Parcours_de_pistage.webp">
+    <link rel="preload" href="../Police/Chewy/Chewy-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../Police/Andika/Andika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../Police/Paprika/Paprika-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <style>
+        @media (max-width: 360px) {
+            .logo-text {
+                font-size: 0.875rem;
+            }
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .card {
+                padding: 1rem;
+            }
+            .text-4xl {
+                font-size: 1.5rem;
+            }
+            .text-3xl {
+                font-size: 1.25rem;
+            }
+            .text-2xl {
+                font-size: 1.125rem;
+            }
+            .text-xl {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="body-bg">
+    <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+    <header class="header-nav">
+        <nav class="bg-white shadow-lg fixed w-full z-50">
+            <div class="header-nav-inner w-full px-3">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex-shrink-0">
+                        <a href="../index.html" class="logo-container">
+                            <img src="../Logo Submarck.png" alt="Logo Le Parc des Loulous" class="logo-image" width="75" height="75" decoding="async">
+                            <span class="logo-text">Le Parc des Loulous</span>
+                        </a>
+                    </div>
+                    <div class="header-nav-menu hidden md:block">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="../index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Accueil</a>
+                            <a href="../parc.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Le Parc</a>
+                            <div class="relative group">
+                                <button class="nav-link active text-gray-700 hover:text-primary px-3 py-2" aria-current="page">Nos Services</button>
+                                <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg py-2 rounded-lg nav-dropdown">
+                                    <a href="garderie.html" class="nav-dropdown-link">Garderie collective</a>
+                                    <a href="centre-aere.html" class="nav-dropdown-link">Centre aéré</a>
+                                    <a href="ecole.html" class="nav-dropdown-link">École du chiot & des ados</a>
+                                    <a href="education.html" class="nav-dropdown-link">Éducation & comportement</a>
+                                    <a href="activites.html" class="nav-dropdown-link">Activités mentales</a>
+                                    <a href="detente.html" class="nav-dropdown-link">Détente & relaxation</a>
+                                    <a href="photo.html" class="nav-dropdown-link">Photographie</a>
+                                    <a href="ateliers.html" class="nav-dropdown-link">Ateliers & événements</a>
+                                </div>
+                            </div>
+                            <a href="../galerie.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Galerie</a>
+                            <a href="../tarifs.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2">Tarifs</a>
+                            <a href="../contact.html" class="btn">Contact</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button" class="mobile-menu-button p-2 rounded-md hover:bg-gray-100" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu de navigation" aria-expanded="false" id="menuToggle">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu hidden md:hidden">
+                <a href="../index.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Accueil</a>
+                <a href="../parc.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Le Parc</a>
+                <div class="relative">
+                    <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 active" onclick="toggleMobileSubmenu()">Nos Services <span class="float-right">▼</span></button>
+                    <div id="mobileSubmenu" class="hidden bg-gray-50">
+                        <a href="garderie.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Garderie collective</a>
+                        <a href="centre-aere.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Centre aéré</a>
+                        <a href="ecole.html" class="block px-6 py-2 text-sm hover:bg-gray-100">École du chiot & des ados</a>
+                        <a href="education.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Éducation & comportement</a>
+                        <a href="activites.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Activités mentales</a>
+                        <a href="detente.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Détente & relaxation</a>
+                        <a href="photo.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Photographie</a>
+                        <a href="ateliers.html" class="block px-6 py-2 text-sm hover:bg-gray-100">Ateliers & événements</a>
+                    </div>
+                </div>
+                <a href="../galerie.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galerie</a>
+                <a href="../tarifs.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tarifs</a>
+                <a href="../contact.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bannière Hero -->
+    <section class="relative h-screen flex flex-col" aria-label="Activités mentales">
+        <div class="absolute inset-0">
+            <img src="../images/Bannières/Parcours_de_pistage.webp" alt="Activités avec votre chien - Le Parc des Loulous" class="w-full h-full object-cover object-center" fetchpriority="high" decoding="async" width="1920" height="1080">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <h1 class="font-chewy text-5xl md:text-7xl font-bold text-white mb-5 drop-shadow-2xl">Activités mentales</h1>
+            <p class="font-paprika text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 hero-text-shadow">
+                Stimulation cognitive et enrichissement mental pour votre chien.
+            </p>
+            <a href="#contenu-principal" class="hero-cta font-paprika inline-flex items-center gap-2 px-8 py-3 shadow-lg hover:opacity-90 mb-8" aria-label="Descendre au contenu">Découvrir</a>
+            <a href="#contenu-principal" class="hero-scroll-link font-paprika inline-flex flex-col items-center text-white transition-colors" aria-label="Descendre au contenu">
+                <i class="fas fa-chevron-down animate-bounce-slow text-white drop-shadow-md" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+    <main id="contenu-principal" class="pt-4 scroll-mt-20">
+        <!-- Intro + visuels -->
+        <section class="pt-10 md:pt-14 pb-12 md:pb-16 bg-cream scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <div>
+                        <h2 class="section-title-home text-3xl md:text-4xl font-bold mb-6">Un esprit actif, un chien épanoui</h2>
+                        <p class="text-gray-600 text-lg mb-4 text-justify">
+                            Les activités mentales permettent de <strong>stimuler l'intelligence</strong> de votre chien tout en renforçant votre complicité. Au Parc des Loulous, nous proposons des ateliers variés : jeux de réflexion, travail olfactif et exercices de concentration, adaptés à l'âge et au profil de chaque animal.
+                        </p>
+                        <p class="text-gray-600 text-lg mb-6 text-justify">
+                            Idéal pour les jours de mauvais temps, les chiens seniors ou simplement pour offrir une alternative enrichissante à la promenade, nos séances offrent un cadre bienveillant et ludique.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="../tarifs.html" class="btn inline-flex items-center gap-2">
+                                Voir les tarifs <i class="fas fa-arrow-right text-white text-sm" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg h-full min-h-[280px]">
+                        <img src="../images/Nos_services/Activites_mentales/Chien_qui_fais_un_puzzle.webp" alt="Chien en activité mentale et jeu de réflexion" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nos activités -->
+        <section class="pt-12 md:pt-16 pb-12 md:pb-16 bg-section-gradient scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Nos activités</h2>
+                <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Jeux de réflexion, olfaction et concentration : trois piliers pour stimuler l'esprit de votre chien.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <div class="space-y-4">
+                        <div class="card p-6 hover:shadow-lg transition-shadow duration-300 flex items-start gap-4">
+                            <div class="text-3xl text-primary flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Jeux de réflexion</h3>
+                                <p class="text-gray-600 text-lg mb-3">Votre chien apprend à analyser, anticiper et trouver des solutions.</p>
+                                <ul class="space-y-2 text-gray-600 text-lg">
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Tapis d'enrichissement </li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Jeux de recherche</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Résolution de problèmes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card p-6 hover:shadow-lg transition-shadow duration-300 flex items-start gap-4">
+                            <div class="text-3xl text-primary flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Travail olfactif</h3>
+                                <p class="text-gray-600 text-lg mb-3">Exploiter l'odorat du chien pour des séances calmes et captivantes.</p>
+                                <ul class="space-y-2 text-gray-600 text-lg">
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Recherche d'objets</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Recherche d'odeurs</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Parcours de pistage</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card p-6 hover:shadow-lg transition-shadow duration-300 flex items-start gap-4">
+                            <div class="text-3xl text-primary flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <i class="fas fa-bullseye" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Concentration</h3>
+                                <p class="text-gray-600 text-lg mb-3">Renforcer l'attention et la maîtrise de soi par des exercices ciblés.</p>
+                                <ul class="space-y-2 text-gray-600 text-lg">
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Exercices de ciblage</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Jeux de patience</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green mr-2 flex-shrink-0" aria-hidden="true"></i> Apprentissage de nouveaux tours</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg h-full min-h-[360px]">
+                        <img src="../images/Nos_services/Activites_mentales/Chien_qui_machouille_sa_balle.webp" alt="Atelier activités mentales au Parc des Loulous" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bénéfices -->
+        <section class="pt-12 md:pt-16 pb-12 md:pb-16 bg-cream scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Les bénéfices</h2>
+                <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Stimulation cognitive, apaisement et renforcement du lien avec votre chien.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <div class="rounded-xl overflow-hidden shadow-lg order-2 lg:order-1 h-full min-h-[360px]">
+                        <img src="../images/Nos_services/Activites_mentales/Chien_avec_sa_balle.webp" alt="Chien et maître en activité" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 order-1 lg:order-2">
+                        <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[160px]">
+                            <span class="text-3xl text-primary mb-3" aria-hidden="true"><i class="fas fa-brain" aria-hidden="true"></i></span>
+                            <h3 class="text-lg font-bold text-primary mb-2">Stimulation cognitive</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">Développement des capacités mentales et de la réflexion.</p>
+                        </div>
+                        <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[160px]">
+                            <span class="text-3xl text-primary mb-3" aria-hidden="true"><i class="fas fa-heart" aria-hidden="true"></i></span>
+                            <h3 class="text-lg font-bold text-primary mb-2">Réduction du stress</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">Diminution de l'anxiété et des comportements destructeurs.</p>
+                        </div>
+                        <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[160px]">
+                            <span class="text-3xl text-primary mb-3" aria-hidden="true"><i class="fas fa-battery-full" aria-hidden="true"></i></span>
+                            <h3 class="text-lg font-bold text-primary mb-2">Canalisation de l'énergie</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">Alternative aux sorties physiques intenses.</p>
+                        </div>
+                        <div class="card p-6 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center justify-center min-h-[160px]">
+                            <span class="text-3xl text-primary mb-3" aria-hidden="true"><i class="fas fa-hands-helping" aria-hidden="true"></i></span>
+                            <h3 class="text-lg font-bold text-primary mb-2">Lien maître-chien</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">Moments de complicité et de jeu partagés.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programme -->
+        <section class="pt-12 md:pt-16 pb-12 md:pb-16 bg-section-gradient scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-4">Notre programme</h2>
+                <p class="text-center text-gray-600 text-lg mb-12">Séances individuelles ou ateliers collectifs, selon vos envies.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card p-6 hover:shadow-xl transition-shadow duration-300 flex items-start gap-4">
+                        <div class="text-3xl text-primary flex-shrink-0"><i class="fas fa-user" aria-hidden="true"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Séances individuelles</h3>
+                            <ul class="space-y-3 text-gray-600 text-lg">
+                                <li class="flex items-start"><i class="fas fa-check text-green mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i> Évaluation des capacités de votre chien</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i> Programme personnalisé selon son niveau</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i> Progression adaptée à son rythme</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card p-6 hover:shadow-xl transition-shadow duration-300 flex items-start gap-4">
+                        <div class="text-3xl text-primary flex-shrink-0"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Ateliers collectifs</h3>
+                            <ul class="space-y-3 text-gray-600 text-lg">
+                                <li class="flex items-start"><i class="fas fa-check text-green mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i> Séances thématiques en petit groupe</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i> Partage d'expériences entre propriétaires</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i> Émulation positive entre les chiens</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie -->
+        <section class="pt-12 md:pt-16 pb-16 md:pb-20 bg-cream scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-title-home text-3xl md:text-4xl font-bold text-center mb-2">Galerie activités mentales</h2>
+                <p class="text-center text-gray-600 text-lg mb-10">Quelques instants de nos ateliers et séances.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 js-gallery">
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Activites_mentales/Chien_qui_court_avec_sa_balle.webp" alt="Stimulation cognitive du chien en atelier" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Activites_mentales/Parcours_olfactif.webp" alt="Jeu de réflexion et stimulation pour chien" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Activites_mentales/Tapis_enrichisement.webp" alt="Stimulation et complicité" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Activites_mentales/Tapis_de_fouille.webp" alt="Atelier olfactif et jeux de pistes" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Activites_mentales/Tapis_de_lechage.webp" alt="Séance d'activités mentales" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
+                        <img src="../images/Nos_services/Activites_mentales/Tapis_de_fouille_2.webp" alt="Chien en concentration lors d’une activité mentale" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                </div>
+                <p class="text-center mt-10">
+                    <a href="../galerie.html" class="btn btn-green inline-flex items-center gap-2">
+                        Voir toute la galerie <i class="fas fa-images" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-block bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <div class="cta-inner">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Stimulez l'esprit de votre chien</h2>
+                    <p class="text-xl mb-8">Découvrez nos activités mentales et réservez une séance.</p>
+                    <a href="../contact.html" class="btn bg-white text-primary hover:bg-gray-100 inline-flex items-center gap-2">
+                        Réserver une séance <i class="fas fa-calendar-check text-primary text-sm" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-cream">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- Identité et adresse -->
+                <div class="footer-brand text-center">
+                    <div class="flex flex-col items-center">
+                        <a href="../index.html" aria-label="Retour à l'accueil">
+                            <img src="../Logo principal.png" alt="Logo Le Parc des Loulous" class="footer-logo w-48 max-w-full h-auto mb-3" loading="lazy" decoding="async">
+                        </a>
+                        <address class="footer-address not-italic mt-2">
+                            123 Avenue des Chiens<br>
+                            63000 Clermont-Ferrand
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact text-center">
+                    <p class="footer-label">Téléphone :</p>
+                    <p class="footer-value">04 73 12 34 56</p>
+                    <p class="footer-label mt-4">Mail :</p>
+                    <p class="footer-value">contact@parcdesloulous.fr</p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-nav text-center">
+                    <ul class="footer-nav-list space-y-2 text-base">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../parc.html">Le Parc</a></li>
+                        <li><a href="garderie.html" class="active" aria-current="page">Nos Services</a></li>
+                        <li><a href="../galerie.html">Galerie</a></li>
+                        <li><a href="../tarifs.html">Tarifs</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="footer-social">
+                    <p class="footer-social-title text-center">Suivez-nous sur <br> les réseaux sociaux</p>
+                    <div class="footer-social-icons flex items-center justify-center gap-3 mt-4">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="footer-social-icon footer-social-x" aria-label="X (anciennement Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+        </div>
+    </footer>
+
+    <!-- Lightbox plein écran -->
+    <div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Photo en grand" tabindex="-1">
+        <button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Photo précédente"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <div class="lightbox-inner">
+            <img src="" alt="">
+            <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
+        </div>
+        <button type="button" class="lightbox-next" id="lightboxNext" aria-label="Photo suivante"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+    </div>
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" class="btn fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Lightbox plein écran avec navigation précédent/suivant
+        (function() {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox) return;
+            const lightboxImg = lightbox.querySelector('.lightbox-inner img');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxPrev = document.getElementById('lightboxPrev');
+            const lightboxNext = document.getElementById('lightboxNext');
+            function getVisibleGalleryImages() {
+                return Array.from(document.querySelectorAll('.js-gallery img'));
+            }
+            let lightboxCurrentIndex = 0;
+            let lightboxVisibleImages = [];
+            function openLightboxAtIndex(visibleImages, index) {
+                lightboxVisibleImages = visibleImages;
+                lightboxCurrentIndex = index;
+                const img = lightboxVisibleImages[lightboxCurrentIndex];
+                if (img) {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                }
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                lightbox.focus();
+            }
+            function showLightboxImage(index) {
+                if (lightboxVisibleImages.length === 0) return;
+                lightboxCurrentIndex = (index + lightboxVisibleImages.length) % lightboxVisibleImages.length;
+                const img = lightboxVisibleImages[lightboxCurrentIndex];
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+            }
+            function goPrev() { showLightboxImage(lightboxCurrentIndex - 1); }
+            function goNext() { showLightboxImage(lightboxCurrentIndex + 1); }
+            document.querySelectorAll('.js-gallery img').forEach(img => {
+                img.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const visible = getVisibleGalleryImages();
+                    const index = visible.indexOf(img);
+                    if (index !== -1) openLightboxAtIndex(visible, index);
+                });
+            });
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+            if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+            if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); goPrev(); });
+            if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); goNext(); });
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
+                if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+            });
+        })();
+
+        // Menu mobile
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        }
+        function toggleMobileSubmenu() {
+            document.getElementById('mobileSubmenu').classList.toggle('hidden');
+        }
+
+        // Bouton retour en haut : sur mobile, différer pour ne pas bloquer le premier rendu
+        function setupScrollAndAria() {
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            if (!scrollToTopButton) return;
+            function updateScrollButtonVisibility() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.remove('opacity-0', 'invisible');
+                    scrollToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopButton.classList.add('opacity-0', 'invisible');
+                    scrollToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            }
+            window.addEventListener('scroll', updateScrollButtonVisibility, { passive: true });
+            updateScrollButtonVisibility(); // état initial (page déjà scrollée ou script différé sur mobile)
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
+                });
+            }
+        }
+        if (window.matchMedia('(max-width: 767px)').matches) {
+            if (typeof requestIdleCallback !== 'undefined') {
+                requestIdleCallback(function() { setupScrollAndAria(); }, { timeout: 1200 });
+            } else {
+                setTimeout(setupScrollAndAria, 200);
+            }
+        } else {
+            setupScrollAndAria();
+        }
+    </script>
+</body>
+</html> 
